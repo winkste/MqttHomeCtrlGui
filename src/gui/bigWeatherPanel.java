@@ -31,10 +31,9 @@ public class bigWeatherPanel extends javax.swing.JPanel {
     picture_sjl = new javax.swing.JLabel();
     temp_sjl = new javax.swing.JLabel();
 
-    setBackground(new java.awt.Color(0, 51, 102));
+    setBackground(new java.awt.Color(255, 255, 255));
 
     day_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-    day_sjl.setForeground(new java.awt.Color(255, 255, 255));
     day_sjl.setText("Today");
 
     picture_sjl.setBackground(new java.awt.Color(204, 255, 204));
@@ -43,7 +42,6 @@ public class bigWeatherPanel extends javax.swing.JPanel {
 
     temp_sjl.setBackground(new java.awt.Color(255, 255, 255));
     temp_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-    temp_sjl.setForeground(new java.awt.Color(255, 255, 255));
     temp_sjl.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
     temp_sjl.setText("10°C/-05°C");
 
@@ -52,13 +50,15 @@ public class bigWeatherPanel extends javax.swing.JPanel {
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
-        .addContainerGap(14, Short.MAX_VALUE)
+        .addContainerGap()
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
             .addComponent(day_sjl)
-            .addGap(18, 18, 18)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
             .addComponent(picture_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-          .addComponent(temp_sjl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(temp_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

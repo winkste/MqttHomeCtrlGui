@@ -42,7 +42,7 @@ public class weatherPanel extends javax.swing.JPanel {
 
     setPreferredSize(new java.awt.Dimension(800, 332));
 
-    jPanel1.setBackground(new java.awt.Color(0, 51, 102));
+    jPanel1.setBackground(new java.awt.Color(255, 255, 255));
     jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
     jPanel1.setMaximumSize(new java.awt.Dimension(595, 333));
     jPanel1.setMinimumSize(new java.awt.Dimension(595, 333));
@@ -50,12 +50,10 @@ public class weatherPanel extends javax.swing.JPanel {
     jPanel1.setPreferredSize(new java.awt.Dimension(595, 333));
 
     jLabel2.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-    jLabel2.setForeground(new java.awt.Color(255, 255, 255));
     jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
     jLabel2.setText("Hannover");
 
     jLabel7.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-    jLabel7.setForeground(new java.awt.Color(255, 255, 255));
     jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
     jLabel7.setText("16:05:33");
 
@@ -64,7 +62,6 @@ public class weatherPanel extends javax.swing.JPanel {
     jLabel8.setText("extra info");
 
     jLabel12.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-    jLabel12.setForeground(new java.awt.Color(255, 255, 255));
     jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
     jLabel12.setText("27. Jan 2017");
 
