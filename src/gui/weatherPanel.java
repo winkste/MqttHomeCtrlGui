@@ -57,7 +57,7 @@ public class weatherPanel extends javax.swing.JPanel {
     jLabel7.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
     jLabel7.setForeground(new java.awt.Color(255, 255, 255));
     jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-    jLabel7.setText("16:05:32");
+    jLabel7.setText("16:05:33");
 
     jLabel8.setForeground(new java.awt.Color(255, 255, 255));
     jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -108,7 +108,7 @@ public class weatherPanel extends javax.swing.JPanel {
               .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(0, 17, Short.MAX_VALUE))))
+            .addGap(0, 13, Short.MAX_VALUE))))
     );
     jPanel1Layout.setVerticalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
