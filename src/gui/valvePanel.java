@@ -5,6 +5,10 @@
  */
 package gui;
 
+import java.awt.Color;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+
 /**
  *
  * @author winkste
@@ -16,6 +20,8 @@ public class valvePanel extends javax.swing.JPanel {
      */
     public valvePanel() {
         initComponents();
+        enableControls(false);
+        autoLed_sjtf.setBackground(Color.green);
     }
 
     /**
@@ -27,99 +33,180 @@ public class valvePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        button2_sjtb = new javax.swing.JToggleButton();
-        button1_sjtb = new javax.swing.JToggleButton();
-        button3_sjtb = new javax.swing.JToggleButton();
-        button4_sjtb = new javax.swing.JToggleButton();
-        button2_sjtb1 = new javax.swing.JToggleButton();
-        button2_sjtb2 = new javax.swing.JToggleButton();
+        back_sjtb = new javax.swing.JToggleButton();
+        auto_sjtb = new javax.swing.JToggleButton();
+        manual_sjtb = new javax.swing.JToggleButton();
+        front_sjtb = new javax.swing.JToggleButton();
+        spare_sjtb = new javax.swing.JToggleButton();
+        down_sjtb = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        active_sjtb = new javax.swing.JToggleButton();
+        manualLed_sjtf = new javax.swing.JTextField();
+        autoLed_sjtf = new javax.swing.JTextField();
+        frontLed_sjtf = new javax.swing.JTextField();
+        backLed_sjtf = new javax.swing.JTextField();
+        downLed_sjtf = new javax.swing.JTextField();
+        spareLed_sjtf = new javax.swing.JTextField();
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setMaximumSize(new java.awt.Dimension(595, 333));
         jPanel1.setMinimumSize(new java.awt.Dimension(595, 333));
         jPanel1.setName(""); // NOI18N
         jPanel1.setPreferredSize(new java.awt.Dimension(595, 333));
 
-        button2_sjtb.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        button2_sjtb.setText("Back");
-
-        button1_sjtb.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        button1_sjtb.setText("Auto");
-        button1_sjtb.addActionListener(new java.awt.event.ActionListener() {
+        back_sjtb.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        back_sjtb.setText("Back");
+        back_sjtb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button1_sjtbActionPerformed(evt);
+                back_sjtbActionPerformed(evt);
             }
         });
 
-        button3_sjtb.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        button3_sjtb.setText("Manual");
-
-        button4_sjtb.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        button4_sjtb.setText("Front");
-
-        button2_sjtb1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        button2_sjtb1.setText("Down");
-        button2_sjtb1.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(auto_sjtb);
+        auto_sjtb.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        auto_sjtb.setText("Auto");
+        auto_sjtb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2_sjtb1ActionPerformed(evt);
+                auto_sjtbActionPerformed(evt);
             }
         });
 
-        button2_sjtb2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        button2_sjtb2.setText("Spare");
-        button2_sjtb2.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(manual_sjtb);
+        manual_sjtb.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        manual_sjtb.setText("Manual");
+        manual_sjtb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2_sjtb2ActionPerformed(evt);
+                manual_sjtbActionPerformed(evt);
             }
         });
 
+        front_sjtb.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        front_sjtb.setText("Front");
+        front_sjtb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                front_sjtbActionPerformed(evt);
+            }
+        });
+
+        spare_sjtb.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        spare_sjtb.setText("Spare");
+        spare_sjtb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                spare_sjtbActionPerformed(evt);
+            }
+        });
+
+        down_sjtb.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        down_sjtb.setText("Down");
+        down_sjtb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                down_sjtbActionPerformed(evt);
+            }
+        });
+
+        jTextArea1.setBackground(new java.awt.Color(51, 102, 255));
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Lucida Grande", 1, 36)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea1.setRows(2);
         jTextArea1.setText("This is a text");
         jScrollPane1.setViewportView(jTextArea1);
+
+        active_sjtb.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        active_sjtb.setText("activate control...");
+        active_sjtb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                active_sjtbActionPerformed(evt);
+            }
+        });
+
+        manualLed_sjtf.setEditable(false);
+        manualLed_sjtf.setToolTipText("");
+
+        autoLed_sjtf.setEditable(false);
+        autoLed_sjtf.setToolTipText("");
+
+        frontLed_sjtf.setEditable(false);
+        frontLed_sjtf.setToolTipText("");
+
+        backLed_sjtf.setEditable(false);
+        backLed_sjtf.setToolTipText("");
+
+        downLed_sjtf.setEditable(false);
+        downLed_sjtf.setToolTipText("");
+
+        spareLed_sjtf.setEditable(false);
+        spareLed_sjtf.setToolTipText("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(67, 67, 67)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(button3_sjtb, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button1_sjtb, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(button4_sjtb, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(button2_sjtb, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(button2_sjtb2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(button2_sjtb1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(auto_sjtb, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                            .addComponent(manual_sjtb, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                            .addComponent(manualLed_sjtf)
+                            .addComponent(autoLed_sjtf))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(frontLed_sjtf)
+                                    .addComponent(front_sjtb, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(back_sjtb, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                                    .addComponent(backLed_sjtf))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(down_sjtb, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                                    .addComponent(downLed_sjtf))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(spare_sjtb, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(spareLed_sjtf)))))
+                    .addComponent(active_sjtb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(76, 76, 76))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(11, 11, 11)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                    .addComponent(button1_sjtb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(button3_sjtb, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                    .addComponent(button2_sjtb1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(button4_sjtb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(button2_sjtb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(button2_sjtb2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(100, 100, 100))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(autoLed_sjtf, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(auto_sjtb, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(frontLed_sjtf, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(backLed_sjtf, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(downLed_sjtf, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(spareLed_sjtf, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(front_sjtb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(back_sjtb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(down_sjtb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(manualLed_sjtf, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(manual_sjtb, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spare_sjtb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(active_sjtb, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -138,28 +225,184 @@ public class valvePanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void button1_sjtbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1_sjtbActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button1_sjtbActionPerformed
+    private void auto_sjtbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auto_sjtbActionPerformed
+        if(true == auto_sjtb.isSelected())
+        {
+            disableValves();
+            manualLed_sjtf.setBackground(Color.white);
+            autoLed_sjtf.setBackground(Color.green);
+            front_sjtb.setEnabled(false);
+            back_sjtb.setEnabled(false);
+            down_sjtb.setEnabled(false);
+            spare_sjtb.setEnabled(false);
+        }
+    }//GEN-LAST:event_auto_sjtbActionPerformed
 
-    private void button2_sjtb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2_sjtb2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button2_sjtb2ActionPerformed
+    private void manual_sjtbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manual_sjtbActionPerformed
+        if(true == manual_sjtb.isSelected())
+        {
+            manualLed_sjtf.setBackground(Color.green);
+            autoLed_sjtf.setBackground(Color.white);
+            front_sjtb.setEnabled(true);
+            back_sjtb.setEnabled(true);
+            down_sjtb.setEnabled(true);
+            spare_sjtb.setEnabled(true);
+        }
+        else
+        {
 
-    private void button2_sjtb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2_sjtb1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button2_sjtb1ActionPerformed
+        }
+    }//GEN-LAST:event_manual_sjtbActionPerformed
+
+    private void front_sjtbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_front_sjtbActionPerformed
+        if(true == front_sjtb.isSelected())
+        {
+            enableFrontValve(true);
+        }
+        else
+        {
+            enableFrontValve(false);
+        }
+    }//GEN-LAST:event_front_sjtbActionPerformed
+
+    private void back_sjtbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_sjtbActionPerformed
+        if(true == back_sjtb.isSelected())
+        {
+            enableBackValve(true);
+        }
+        else
+        {
+            enableBackValve(false);
+        }
+    }//GEN-LAST:event_back_sjtbActionPerformed
+
+    private void down_sjtbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_sjtbActionPerformed
+        if(true == down_sjtb.isSelected())
+        {
+            enableDownValve(true);
+        }
+        else
+        {
+            enableDownValve(false);
+        }
+    }//GEN-LAST:event_down_sjtbActionPerformed
+
+    private void spare_sjtbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spare_sjtbActionPerformed
+        if(true == spare_sjtb.isSelected())
+        {
+            enableSpareValve(true);
+        }
+        else
+        {
+            enableSpareValve(false);
+        }
+    }//GEN-LAST:event_spare_sjtbActionPerformed
+
+    private void active_sjtbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_active_sjtbActionPerformed
+        if(true == active_sjtb.isSelected())
+        {
+            enableControls(true);
+        }
+        else
+        {
+            enableControls(false);
+        }
+    }//GEN-LAST:event_active_sjtbActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton button1_sjtb;
-    private javax.swing.JToggleButton button2_sjtb;
-    private javax.swing.JToggleButton button2_sjtb1;
-    private javax.swing.JToggleButton button2_sjtb2;
-    private javax.swing.JToggleButton button3_sjtb;
-    private javax.swing.JToggleButton button4_sjtb;
+    private javax.swing.JToggleButton active_sjtb;
+    private javax.swing.JTextField autoLed_sjtf;
+    private javax.swing.JToggleButton auto_sjtb;
+    private javax.swing.JTextField backLed_sjtf;
+    private javax.swing.JToggleButton back_sjtb;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JTextField downLed_sjtf;
+    private javax.swing.JToggleButton down_sjtb;
+    private javax.swing.JTextField frontLed_sjtf;
+    private javax.swing.JToggleButton front_sjtb;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField manualLed_sjtf;
+    private javax.swing.JToggleButton manual_sjtb;
+    private javax.swing.JTextField spareLed_sjtf;
+    private javax.swing.JToggleButton spare_sjtb;
     // End of variables declaration//GEN-END:variables
+
+    private void enableControls(boolean b) {
+        if(true == b)
+        {
+            auto_sjtb.setEnabled(true);
+            manual_sjtb.setEnabled(true);
+            back_sjtb.setEnabled(true);
+            down_sjtb.setEnabled(true);
+            front_sjtb.setEnabled(true);
+            spare_sjtb.setEnabled(true);
+        }
+        else
+        {
+            auto_sjtb.setEnabled(false);
+            manual_sjtb.setEnabled(false);
+            back_sjtb.setEnabled(false);
+            down_sjtb.setEnabled(false);
+            front_sjtb.setEnabled(false);
+            spare_sjtb.setEnabled(false);
+        }
+    }
+
+    private void disableValves() {
+        front_sjtb.setSelected(false);
+        enableFrontValve(false);
+        back_sjtb.setSelected(false);
+        enableBackValve(false);
+        down_sjtb.setSelected(false);
+        enableDownValve(false);
+        spare_sjtb.setSelected(false);
+        enableSpareValve(false);
+    }
+
+    private void enableFrontValve(boolean b) {
+        if(true == b)
+        {
+            frontLed_sjtf.setBackground(Color.red);
+        }
+        else
+        {
+            frontLed_sjtf.setBackground(Color.white);
+        }
+    }
+
+    private void enableBackValve(boolean b) {
+        if(true == b)
+        {
+            backLed_sjtf.setBackground(Color.red);
+        }
+        else
+        {
+            backLed_sjtf.setBackground(Color.white);
+        }
+    }
+
+    private void enableDownValve(boolean b) {
+        if(true == b)
+        {
+            downLed_sjtf.setBackground(Color.red);
+        }
+        else
+        {
+            downLed_sjtf.setBackground(Color.white);
+        }
+    }
+
+    private void enableSpareValve(boolean b) {
+        if(true == b)
+        {
+            spareLed_sjtf.setBackground(Color.red);
+        }
+        else
+        {
+            spareLed_sjtf.setBackground(Color.white);
+        }
+    }
 }
