@@ -5,6 +5,8 @@
  */
 package gui;
 
+import control.btnIntface;
+
 /**
  *
  * @author winkste
@@ -100,6 +102,7 @@ public class buttonPanel extends javax.swing.JPanel {
 
     private void button1_sjtbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1_sjtbActionPerformed
         // TODO add your handling code here:
+        btnIface_if.notifyButtonPressed(1);
     }//GEN-LAST:event_button1_sjtbActionPerformed
 
 
@@ -110,4 +113,10 @@ public class buttonPanel extends javax.swing.JPanel {
   private javax.swing.JToggleButton button4_sjtb;
   private javax.swing.JPanel jPanel1;
   // End of variables declaration//GEN-END:variables
+  public btnIntface btnIface_if;
+  
+  public void register (btnIntface btnIface_if)
+  {
+    this.btnIface_if = btnIface_if;
+  }
 }
