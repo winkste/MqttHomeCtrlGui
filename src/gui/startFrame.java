@@ -5,6 +5,11 @@
  */
 package gui;
 
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JPanel;
+
 /**
  *
  * @author winkste
@@ -25,6 +30,10 @@ public class startFrame extends javax.swing.JFrame {
         panelVector[0] = buttonPanel;
         panelVector[1] = tempPanel;
         panelVector[2] = weatherPanel;
+        
+        panelList = new ArrayList<JPanel>();
+
+        
         
         //userPanel_sjp.remove(tempPanel);        
         javax.swing.GroupLayout userPanel_sjpLayout = new javax.swing.GroupLayout(userPanel_sjp);
@@ -183,6 +192,10 @@ public class startFrame extends javax.swing.JFrame {
         );
     }//GEN-LAST:event_forward_sjbActionPerformed
 
+    public void addPanel(JPanel newPanel)
+    {
+      panelList.add(newPanel);
+    }
 
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -197,5 +210,6 @@ public class startFrame extends javax.swing.JFrame {
     public gui.homeTempPanel tempPanel;
     public javax.swing.JPanel[] panelVector;
     public int panelIdx_i = 0;
+    private List<JPanel> panelList;
     
 }

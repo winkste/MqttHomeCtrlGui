@@ -32,7 +32,7 @@ public class smallWeatherPanel extends javax.swing.JPanel {
     temp_sjl = new javax.swing.JLabel();
 
     setBackground(new java.awt.Color(255, 255, 255));
-    setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
     day_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
     day_sjl.setText("Day");
@@ -64,7 +64,7 @@ public class smallWeatherPanel extends javax.swing.JPanel {
           .addComponent(day_sjl)
           .addComponent(picture_sjl))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(temp_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 18, Short.MAX_VALUE)
+        .addComponent(temp_sjl, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
         .addContainerGap())
     );
   }// </editor-fold>//GEN-END:initComponents

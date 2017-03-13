@@ -12,6 +12,11 @@ import gui.startFrame;
  * @author winkste
  */
 public class TestApplic {
+  
+  public static gui.buttonPanel buttonPanel;
+  public static gui.weatherPanel weatherPanel;
+  public static gui.homeTempPanel tempPanel;
+  public static gui.startFrame myStartFrame;
 
     /**
      * @param args the command line arguments
@@ -42,8 +47,19 @@ public class TestApplic {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new startFrame().setVisible(true);
+            public void run() 
+            {
+              buttonPanel = new gui.buttonPanel();
+              weatherPanel = new gui.weatherPanel(); 
+              tempPanel = new gui.homeTempPanel();
+              myStartFrame = new startFrame();
+              
+              myStartFrame.addPanel(buttonPanel);
+              myStartFrame.addPanel(weatherPanel);
+              myStartFrame.addPanel(tempPanel);
+              
+              myStartFrame.setVisible(true);
+              //new startFrame().setVisible(true);
             }
         });
     }
