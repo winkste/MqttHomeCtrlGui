@@ -16,6 +16,7 @@ public class TestApplic {
   public static gui.buttonPanel buttonPanel;
   public static gui.weatherPanel weatherPanel;
   public static gui.homeTempPanel tempPanel;
+  public static gui.valvePanel valvePanel;
   public static gui.startFrame myStartFrame;
 
     /**
@@ -52,11 +53,13 @@ public class TestApplic {
               buttonPanel = new gui.buttonPanel();
               weatherPanel = new gui.weatherPanel(); 
               tempPanel = new gui.homeTempPanel();
+              valvePanel = new gui.valvePanel();
               myStartFrame = new startFrame();
               
               myStartFrame.addPanel(buttonPanel);
               myStartFrame.addPanel(weatherPanel);
               myStartFrame.addPanel(tempPanel);
+              myStartFrame.addPanel(valvePanel);
               
               myStartFrame.setVisible(true);
               //new startFrame().setVisible(true);

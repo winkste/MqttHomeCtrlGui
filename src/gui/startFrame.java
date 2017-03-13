@@ -22,16 +22,17 @@ public class startFrame extends javax.swing.JFrame {
     public startFrame() {
         initComponents();
         
-        buttonPanel = new gui.valvePanel();
-        weatherPanel = new gui.weatherPanel(); 
-        tempPanel = new gui.homeTempPanel();
-        panelVector = new javax.swing.JPanel[3];
+        //buttonPanel = new gui.valvePanel();
+        //weatherPanel = new gui.weatherPanel(); 
+        //tempPanel = new gui.homeTempPanel();
+        //panelVector = new javax.swing.JPanel[3];
         
-        panelVector[0] = buttonPanel;
-        panelVector[1] = tempPanel;
-        panelVector[2] = weatherPanel;
+        //panelVector[0] = buttonPanel;
+        //panelVector[1] = tempPanel;
+        //panelVector[2] = weatherPanel;
         
-        panelList = new ArrayList<JPanel>();
+        panelList = new ArrayList<>();
+        /*
 
         
         
@@ -42,14 +43,14 @@ public class startFrame extends javax.swing.JFrame {
             userPanel_sjpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, userPanel_sjpLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(panelVector[panelIdx_i], javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(panelList.get(panelIdx_i), javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         userPanel_sjpLayout.setVerticalGroup(
             userPanel_sjpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(userPanel_sjpLayout.createSequentialGroup()
-                .addComponent(panelVector[panelIdx_i], javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelList.get(panelIdx_i), javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-        );
+        );*/
         
     }
 
@@ -142,10 +143,10 @@ public class startFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backward_sjwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backward_sjwActionPerformed
-        userPanel_sjp.remove(panelVector[panelIdx_i]);
+        userPanel_sjp.remove(panelList.get(panelIdx_i));
         if(0 == panelIdx_i)
         {
-            panelIdx_i = 2;
+            panelIdx_i = panelList.size() - 1;
         }
         else
         {
@@ -158,12 +159,12 @@ public class startFrame extends javax.swing.JFrame {
             userPanel_sjpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, userPanel_sjpLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(panelVector[panelIdx_i], javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(panelList.get(panelIdx_i), javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         userPanel_sjpLayout.setVerticalGroup(
             userPanel_sjpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(userPanel_sjpLayout.createSequentialGroup()
-                .addComponent(panelVector[panelIdx_i], javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelList.get(panelIdx_i), javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         
@@ -171,8 +172,8 @@ public class startFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_backward_sjwActionPerformed
 
     private void forward_sjbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forward_sjbActionPerformed
-        userPanel_sjp.remove(panelVector[panelIdx_i]);
-        if(2 == panelIdx_i)
+        userPanel_sjp.remove(panelList.get(panelIdx_i));
+        if(panelIdx_i == panelList.size() - 1)
         {
             panelIdx_i = 0;
         }
@@ -187,12 +188,12 @@ public class startFrame extends javax.swing.JFrame {
             userPanel_sjpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, userPanel_sjpLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(panelVector[panelIdx_i], javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(panelList.get(panelIdx_i), javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         userPanel_sjpLayout.setVerticalGroup(
             userPanel_sjpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(userPanel_sjpLayout.createSequentialGroup()
-                .addComponent(panelVector[panelIdx_i], javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelList.get(panelIdx_i), javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
     }//GEN-LAST:event_forward_sjbActionPerformed
@@ -200,6 +201,23 @@ public class startFrame extends javax.swing.JFrame {
     public void addPanel(JPanel newPanel)
     {
       panelList.add(newPanel);
+      
+      userPanel_sjp.remove(panelList.get(panelIdx_i));
+      panelIdx_i = panelList.size() - 1;
+      javax.swing.GroupLayout userPanel_sjpLayout = new javax.swing.GroupLayout(userPanel_sjp);
+        userPanel_sjp.setLayout(userPanel_sjpLayout);
+        userPanel_sjpLayout.setHorizontalGroup(
+            userPanel_sjpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, userPanel_sjpLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(panelList.get(panelIdx_i), javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        userPanel_sjpLayout.setVerticalGroup(
+            userPanel_sjpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(userPanel_sjpLayout.createSequentialGroup()
+                .addComponent(panelList.get(panelIdx_i), javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
     }
 
 
@@ -210,11 +228,11 @@ public class startFrame extends javax.swing.JFrame {
     public javax.swing.JPanel userPanel_sjp;
     // End of variables declaration//GEN-END:variables
 
-    public gui.valvePanel buttonPanel;
-    public gui.weatherPanel weatherPanel;
-    public gui.homeTempPanel tempPanel;
-    public javax.swing.JPanel[] panelVector;
+    //public gui.valvePanel buttonPanel;
+    //public gui.weatherPanel weatherPanel;
+    //public gui.homeTempPanel tempPanel;
+    //public javax.swing.JPanel[] panelVector;
     public int panelIdx_i = 0;
-    private List<JPanel> panelList;
+    private final List<JPanel> panelList;
     
 }
