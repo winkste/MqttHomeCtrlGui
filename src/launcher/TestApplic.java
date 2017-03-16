@@ -6,6 +6,7 @@
 package launcher;
 
 import gui.startFrame;
+import myMqtt.MyMqttClient;
 
 /**
  *
@@ -50,19 +51,24 @@ public class TestApplic {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() 
             {
-              buttonPanel = new gui.buttonPanel();
-              weatherPanel = new gui.weatherPanel(); 
-              tempPanel = new gui.homeTempPanel();
-              valvePanel = new gui.valvePanel();
-              myStartFrame = new startFrame();
+                buttonPanel = new gui.buttonPanel();
+                weatherPanel = new gui.weatherPanel(); 
+                tempPanel = new gui.homeTempPanel();
+                valvePanel = new gui.valvePanel();
+                myStartFrame = new startFrame();
               
-              myStartFrame.addPanel(buttonPanel);
-              myStartFrame.addPanel(weatherPanel);
-              myStartFrame.addPanel(tempPanel);
-              myStartFrame.addPanel(valvePanel);
+                MyMqttClient client = new MyMqttClient();      
+                client.connectClient("tcp://192.168.178.43:1883", "macBook_pro");  
+                client.setSubscriber(tempPanel.getMqttSubscriberTemperature("/fhem/esp/1/Temperature"));
+                client.setSubscriber(tempPanel.getMqttSubscriberHumidity("/fhem/esp/1/Humidity"));
               
-              myStartFrame.setVisible(true);
-              //new startFrame().setVisible(true);
+                myStartFrame.addPanel(buttonPanel);
+                myStartFrame.addPanel(weatherPanel);
+                myStartFrame.addPanel(tempPanel);
+                myStartFrame.addPanel(valvePanel);
+              
+                myStartFrame.setVisible(true);
+                //new startFrame().setVisible(true);
             }
         });
     }
