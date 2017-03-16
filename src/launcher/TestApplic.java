@@ -53,7 +53,7 @@ public class TestApplic {
             {
                 buttonPanel = new gui.buttonPanel();
                 weatherPanel = new gui.weatherPanel(); 
-                tempPanel = new gui.homeTempPanel();
+                tempPanel = new gui.homeTempPanel("Wohnzimmer");
                 valvePanel = new gui.valvePanel();
                 myStartFrame = new startFrame();
               

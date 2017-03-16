@@ -15,9 +15,11 @@ public class homeTempPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form homeTempPanel
+     * @param room
      */
-    public homeTempPanel() {
+    public homeTempPanel(String room) {
         initComponents();
+        room_sjl.setText(room);
     }
 
     /**
@@ -30,7 +32,7 @@ public class homeTempPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        room_sjl = new javax.swing.JLabel();
         temp_sjl = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -45,25 +47,25 @@ public class homeTempPanel extends javax.swing.JPanel {
         jPanel1.setPreferredSize(new java.awt.Dimension(1012, 455));
         jPanel1.setRequestFocusEnabled(false);
 
-        jLabel1.setFont(new java.awt.Font("LCDMono2", 0, 60)); // NOI18N
-        jLabel1.setText("ROOM1");
+        room_sjl.setFont(new java.awt.Font("Arial Black", 0, 60)); // NOI18N
+        room_sjl.setText("ROOM1");
 
-        temp_sjl.setFont(new java.awt.Font("Open 24 Display St", 1, 110)); // NOI18N
+        temp_sjl.setFont(new java.awt.Font("Arial Black", 1, 110)); // NOI18N
         temp_sjl.setText("+00.0");
 
-        jLabel3.setFont(new java.awt.Font("LCDMono2", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel3.setText("Temperature");
 
-        jLabel4.setFont(new java.awt.Font("Open 24 Display St", 0, 110)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial Black", 0, 110)); // NOI18N
         jLabel4.setText("°C");
 
-        jLabel5.setFont(new java.awt.Font("LCDMono2", 0, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel5.setText("Humidity");
 
-        humidity_sjl.setFont(new java.awt.Font("Open 24 Display St", 1, 80)); // NOI18N
+        humidity_sjl.setFont(new java.awt.Font("Arial Black", 1, 80)); // NOI18N
         humidity_sjl.setText("+00.0");
 
-        jLabel7.setFont(new java.awt.Font("Open 24 Display St", 0, 80)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Arial Black", 0, 80)); // NOI18N
         jLabel7.setText("%");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -74,7 +76,7 @@ public class homeTempPanel extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 331, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 303, Short.MAX_VALUE)
                         .addComponent(temp_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel4)
@@ -88,14 +90,14 @@ public class homeTempPanel extends javax.swing.JPanel {
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(214, 214, 214)
-                .addComponent(jLabel1)
+                .addComponent(room_sjl)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(room_sjl)
                 .addGap(47, 47, 47)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(temp_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -126,12 +128,12 @@ public class homeTempPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel humidity_sjl;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel room_sjl;
     private javax.swing.JLabel temp_sjl;
     // End of variables declaration//GEN-END:variables
 
