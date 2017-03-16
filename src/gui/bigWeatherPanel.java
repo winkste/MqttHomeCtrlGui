@@ -33,15 +33,14 @@ public class bigWeatherPanel extends javax.swing.JPanel {
 
     setBackground(new java.awt.Color(255, 255, 255));
 
-    day_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+    day_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 36)); // NOI18N
     day_sjl.setText("Today");
 
     picture_sjl.setBackground(new java.awt.Color(204, 255, 204));
-    picture_sjl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icon-set/GIF/150x150/blizzard.gif"))); // NOI18N
-    picture_sjl.setText("picture");
+    picture_sjl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icon-set/GIF/250x250/blizzard.gif"))); // NOI18N
 
     temp_sjl.setBackground(new java.awt.Color(255, 255, 255));
-    temp_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+    temp_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 36)); // NOI18N
     temp_sjl.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
     temp_sjl.setText("10°C/-05°C");
 
@@ -51,24 +50,22 @@ public class bigWeatherPanel extends javax.swing.JPanel {
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
         .addContainerGap()
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-            .addComponent(day_sjl)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-            .addComponent(picture_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-            .addGap(0, 0, Short.MAX_VALUE)
-            .addComponent(temp_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
+        .addComponent(day_sjl)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(picture_sjl)
+        .addContainerGap())
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+        .addGap(0, 0, Short.MAX_VALUE)
+        .addComponent(temp_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addComponent(day_sjl)
-          .addComponent(picture_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(picture_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(temp_sjl, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-        .addContainerGap())
+        .addComponent(temp_sjl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
   }// </editor-fold>//GEN-END:initComponents
 
