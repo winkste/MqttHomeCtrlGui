@@ -181,22 +181,22 @@ public class weatherPanel extends javax.swing.JPanel {
                 todayPanel_bwp.setTempMax_str(weather.getDay0MaxTemp_str());
                 todayPanel_bwp.setTemp_str(weather.getDay0ActTemp_str());
                 todayPanel_bwp.setHum_str(weather.getDay0Hum_str());
-                //todayPanel_bwp.setIconPath_str(weather.getDay0IconPath_str());
+                todayPanel_bwp.setIconPath_str(weather.getDay0IconPath_str());
                 
                 firstDayPanel_smp.setDay_str(weather.getDay1_str());
                 firstDayPanel_smp.setTempMax_str(weather.getDay1MaxTemp_str());
                 firstDayPanel_smp.setTempMin_str(weather.getDay1MinTemp_str());
-                //firstDayPanel_smp.setIconPath_str(weather.getDay1IconPath_str());
+                firstDayPanel_smp.setIconPath_str(weather.getDay1IconPath_str());
                 
                 secondDayPanel_smp.setDay_str(weather.getDay2_str());
                 secondDayPanel_smp.setTempMax_str(weather.getDay2MaxTemp_str());
                 secondDayPanel_smp.setTempMin_str(weather.getDay2MinTemp_str());
-                //secondDayPanel_smp.setIconPath_str(weather.getDay2IconPath_str());
+                secondDayPanel_smp.setIconPath_str(weather.getDay2IconPath_str());
                 
                 thirdDayPanel_smp.setDay_str(weather.getDay3_str());
                 thirdDayPanel_smp.setTempMax_str(weather.getDay3MaxTemp_str());
                 thirdDayPanel_smp.setTempMin_str(weather.getDay3MinTemp_str());
-                //thirdDayPanel_smp.setIconPath_str(weather.getDay3IconPath_str());
+                thirdDayPanel_smp.setIconPath_str(weather.getDay3IconPath_str());
                 
             }
             catch ( /* InterruptedException, ExecutionException */ Exception e ) { }
