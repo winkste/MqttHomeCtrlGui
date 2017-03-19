@@ -61,6 +61,7 @@ public class TestApplic {
                 client.connectClient("tcp://192.168.178.43:1883", "macBook_pro");  
                 client.setSubscriber(tempPanel.getMqttSubscriberTemperature("/fhem/esp/1/Temperature"));
                 client.setSubscriber(tempPanel.getMqttSubscriberHumidity("/fhem/esp/1/Humidity"));
+                tempPanel.SetHumidityThreshold(50.0);
               
                 myStartFrame.addPanel(buttonPanel);
                 myStartFrame.addPanel(weatherPanel);
