@@ -66,7 +66,8 @@ public class TestApplic {
                 client.setSubscriber(tempPanel.getMqttSubscriberHumidity("/fhem/esp/1/Humidity"));
                 client.setSubscriber(homeGraph.getMqttSubscriberTemperature("/fhem/esp/1/Temperature"));
                 client.setSubscriber(homeGraph.getMqttSubscriberHumidity("/fhem/esp/1/Humidity"));
-              
+                tempPanel.SetHumidityThreshold(50.0);
+
                 myStartFrame.addPanel(buttonPanel);
                 myStartFrame.addPanel(weatherPanel);
                 myStartFrame.addPanel(tempPanel);

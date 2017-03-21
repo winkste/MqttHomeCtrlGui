@@ -5,6 +5,7 @@
  */
 package gui;
 
+import java.awt.Color;
 import myMqtt.MqttSubscriber;
 
 /**
@@ -13,6 +14,8 @@ import myMqtt.MqttSubscriber;
  */
 public class homeTempPanel extends javax.swing.JPanel {
 
+    private double humidityThreshold_d = 50.0;
+    private Color standardBgColor_c; 
     /**
      * Creates new form homeTempPanel
      * @param room
@@ -48,57 +51,66 @@ public class homeTempPanel extends javax.swing.JPanel {
         jPanel1.setRequestFocusEnabled(false);
 
         room_sjl.setFont(new java.awt.Font("Arial Black", 0, 60)); // NOI18N
+        room_sjl.setForeground(new java.awt.Color(102, 102, 102));
+        room_sjl.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         room_sjl.setText("ROOM1");
 
         temp_sjl.setFont(new java.awt.Font("Arial Black", 1, 110)); // NOI18N
+        temp_sjl.setForeground(new java.awt.Color(102, 102, 102));
         temp_sjl.setText("+00.0");
 
         jLabel3.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Temperature");
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 110)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("°C");
 
         jLabel5.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Humidity");
+        jLabel5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         humidity_sjl.setFont(new java.awt.Font("Arial Black", 1, 80)); // NOI18N
+        humidity_sjl.setForeground(new java.awt.Color(102, 102, 102));
         humidity_sjl.setText("+00.0");
 
         jLabel7.setFont(new java.awt.Font("Arial Black", 0, 80)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setText("%");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(room_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(humidity_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel7))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 303, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 315, Short.MAX_VALUE)
                         .addComponent(temp_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel4)
-                        .addGap(12, 12, 12))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(humidity_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel7)))
+                        .addComponent(jLabel4)))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(214, 214, 214)
-                .addComponent(room_sjl)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(room_sjl)
-                .addGap(47, 47, 47)
+                .addGap(53, 53, 53)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(temp_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
@@ -107,7 +119,9 @@ public class homeTempPanel extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(humidity_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)))
                 .addContainerGap())
         );
 
@@ -161,8 +175,23 @@ public class homeTempPanel extends javax.swing.JPanel {
             @Override
             public void notify(String msg) {
                 humidity_sjl.setText(msg);
+                if(humidityThreshold_d < Float.parseFloat(msg))
+                {
+                    standardBgColor_c = jPanel1.getBackground();
+                    jPanel1.setBackground(new java.awt.Color(255,102,102)); 
+                    
+                }
+                else
+                {
+                    jPanel1.setBackground(standardBgColor_c);
+                }
             }
         });
     }
+    
+    public void SetHumidityThreshold(double newThreshold_d){
+        humidityThreshold_d = newThreshold_d;
+    }
+            
 
 }
