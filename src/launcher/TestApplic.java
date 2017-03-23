@@ -21,6 +21,7 @@ public class TestApplic {
   public static gui.valvePanel valvePanel;
   public static homeGraphPanel homeGraph;
   public static gui.startFrame myStartFrame;
+  public static gui.homeTempPanel hallTempPanel;
 
     /**
      * @param args the command line arguments
@@ -59,6 +60,7 @@ public class TestApplic {
                 valvePanel = new gui.valvePanel();
                 homeGraph = new gui.homeGraphPanel("Wohnzimmer");
                 myStartFrame = new startFrame();
+                hallTempPanel = new gui.homeTempPanel("Flur");
               
                 MyMqttClient client = new MyMqttClient();      
                 client.connectClient("tcp://192.168.178.43:1883", "macBook_pro");  
@@ -67,10 +69,15 @@ public class TestApplic {
                 client.setSubscriber(homeGraph.getMqttSubscriberTemperature("/fhem/esp/1/Temperature"));
                 client.setSubscriber(homeGraph.getMqttSubscriberHumidity("/fhem/esp/1/Humidity"));
                 tempPanel.SetHumidityThreshold(50.0);
-
+                
+                client.setSubscriber(hallTempPanel.getMqttSubscriberTemperature("/fhem/esp/4/Temperature"));
+                client.setSubscriber(hallTempPanel.getMqttSubscriberHumidity("/fhem/esp/4/Humidity"));
+                hallTempPanel.SetHumidityThreshold(50.0);
+                
                 myStartFrame.addPanel(buttonPanel);
                 myStartFrame.addPanel(weatherPanel);
                 myStartFrame.addPanel(tempPanel);
+                myStartFrame.addPanel(hallTempPanel);
                 myStartFrame.addPanel(valvePanel);
                 myStartFrame.addPanel(homeGraph);
               

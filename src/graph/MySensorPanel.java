@@ -62,7 +62,7 @@ public class MySensorPanel {
         XYPlot plot = (XYPlot) chart.getPlot();
         ValueAxis axis = plot.getDomainAxis();
         axis.setAutoRange(true);
-        axis.setFixedAutoRange(1000.0/* * 60 * 60 * 24*/);  // 24 hrs
+        axis.setFixedAutoRange(1000.0 * 60 * 60 /* 24*/);  // 24 hrs
 
         plot.setDataset(1, dataset2);
         NumberAxis rangeAxis2 = new NumberAxis("%");

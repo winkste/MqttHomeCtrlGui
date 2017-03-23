@@ -96,7 +96,7 @@ public class MyWeather {
             day2Weather_str = tokens_st.nextToken();
             //Index #17 :http://icons.wxug.com/i/c/k/chancerain.gif
             tokens_st.nextToken();
-            day0IconPath_str = convertWeather(day2Weather_str);
+            day2IconPath_str = convertWeather(day2Weather_str);
             //Index #18 :Wed
             day3_str = tokens_st.nextToken();
             //Index #19 :12

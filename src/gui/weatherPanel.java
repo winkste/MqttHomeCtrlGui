@@ -6,6 +6,9 @@
 package gui;
 
 import control.MyWeather;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.SwingWorker;
 import procExe.ExePython;
 
@@ -35,9 +38,9 @@ public class weatherPanel extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         pos_sjl = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        time_sjl = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        date_sjl = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         firstDayPanel_smp = new gui.smallWeatherPanel();
         secondDayPanel_smp = new gui.smallWeatherPanel();
@@ -55,19 +58,19 @@ public class weatherPanel extends javax.swing.JPanel {
 
         pos_sjl.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         pos_sjl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        pos_sjl.setText("Hannover");
+        pos_sjl.setText("Celle");
 
-        jLabel7.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel7.setText("16:05:33");
+        time_sjl.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        time_sjl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        time_sjl.setText("16:05:33");
 
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("extra info");
 
-        jLabel12.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel12.setText("27. Jan 2017");
+        date_sjl.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        date_sjl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        date_sjl.setText("27. Jan 2017");
 
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -99,10 +102,10 @@ public class weatherPanel extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(todayPanel_bwp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(pos_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(pos_sjl, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                                .addComponent(date_sjl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(time_sjl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -110,13 +113,17 @@ public class weatherPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(pos_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(118, 118, 118)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(pos_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(date_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(time_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(todayPanel_bwp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -141,15 +148,15 @@ public class weatherPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel date_sjl;
     private gui.smallWeatherPanel firstDayPanel_smp;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel pos_sjl;
     private gui.smallWeatherPanel secondDayPanel_smp;
     private gui.smallWeatherPanel thirdDayPanel_smp;
+    private javax.swing.JLabel time_sjl;
     private gui.bigWeatherPanel todayPanel_bwp;
     // End of variables declaration//GEN-END:variables
 
@@ -163,7 +170,7 @@ public class weatherPanel extends javax.swing.JPanel {
             try 
             { 
                 // update cycle 1 minute
-                Thread.sleep(10000); 
+                Thread.sleep(1000*60); 
             } catch ( InterruptedException e ) { }
           new DataCollector().execute();
           return (counter++);
@@ -198,8 +205,31 @@ public class weatherPanel extends javax.swing.JPanel {
                 thirdDayPanel_smp.setTempMin_str(weather.getDay3MinTemp_str());
                 thirdDayPanel_smp.setIconPath_str(weather.getDay3IconPath_str());
                 
+                updateDateTime();
+
+                
+                
             }
             catch ( /* InterruptedException, ExecutionException */ Exception e ) { }
+        }
+
+        private void updateDateTime() {
+            // update date / time information
+            Date d = new Date();
+            
+            SimpleDateFormat sdfmt = new SimpleDateFormat();
+            sdfmt.applyPattern( "EEEE', 'dd. MMMM yyyy hh:mm" );
+            System.out.println(sdfmt.format(d));
+            
+            sdfmt = new SimpleDateFormat();
+            sdfmt.applyPattern( "EEEE', 'dd. MMMM yyyy" );
+            //System.out.println(sdfmt.format(d));
+            date_sjl.setText(sdfmt.format(d));
+            
+            sdfmt = new SimpleDateFormat();
+            sdfmt.applyPattern( "hh:mm" );
+            //System.out.println(sdfmt.format(d));
+            time_sjl.setText(sdfmt.format(d));
         }
     }
 
