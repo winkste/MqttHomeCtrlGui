@@ -23,6 +23,7 @@ public class homeTempPanel extends javax.swing.JPanel {
     public homeTempPanel(String room) {
         initComponents();
         room_sjl.setText(room);
+        standardBgColor_c = jPanel1.getBackground();
     }
 
     /**
@@ -53,7 +54,7 @@ public class homeTempPanel extends javax.swing.JPanel {
         room_sjl.setFont(new java.awt.Font("Arial Black", 0, 60)); // NOI18N
         room_sjl.setForeground(new java.awt.Color(102, 102, 102));
         room_sjl.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        room_sjl.setText("ROOM1");
+        room_sjl.setText("Raum");
 
         temp_sjl.setFont(new java.awt.Font("Arial Black", 1, 110)); // NOI18N
         temp_sjl.setForeground(new java.awt.Color(102, 102, 102));
@@ -61,7 +62,7 @@ public class homeTempPanel extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel3.setText("Temperature");
+        jLabel3.setText("Temperatur");
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 110)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
@@ -69,7 +70,8 @@ public class homeTempPanel extends javax.swing.JPanel {
 
         jLabel5.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel5.setText("Humidity");
+        jLabel5.setText("Luftfeuchtigkeit");
+        jLabel5.setToolTipText("");
         jLabel5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         humidity_sjl.setFont(new java.awt.Font("Arial Black", 1, 80)); // NOI18N
@@ -100,7 +102,7 @@ public class homeTempPanel extends javax.swing.JPanel {
                                 .addComponent(jLabel7))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 315, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 331, Short.MAX_VALUE)
                         .addComponent(temp_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel4)))
@@ -116,12 +118,13 @@ public class homeTempPanel extends javax.swing.JPanel {
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
                 .addGap(44, 44, 44)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(humidity_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)))
+                        .addGap(42, 42, 42))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(humidity_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -177,7 +180,6 @@ public class homeTempPanel extends javax.swing.JPanel {
                 humidity_sjl.setText(msg);
                 if(humidityThreshold_d < Float.parseFloat(msg))
                 {
-                    standardBgColor_c = jPanel1.getBackground();
                     jPanel1.setBackground(new java.awt.Color(255,102,102)); 
                     
                 }

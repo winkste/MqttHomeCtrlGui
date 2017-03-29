@@ -183,24 +183,24 @@ public class weatherPanel extends javax.swing.JPanel {
                 lastWeatherSet_str = ExePython.execPython("requestWeather.py");
                 System.out.println(lastWeatherSet_str);
                 MyWeather weather = new MyWeather(lastWeatherSet_str);
-                todayPanel_bwp.setDay_str(weather.getDay0_str());
+                todayPanel_bwp.setDay_str(weatherPanel.convertDay(weather.getDay0_str()));
                 todayPanel_bwp.setTempMin_str(weather.getDay0MinTemp_str());
                 todayPanel_bwp.setTempMax_str(weather.getDay0MaxTemp_str());
                 todayPanel_bwp.setTemp_str(weather.getDay0ActTemp_str());
                 todayPanel_bwp.setHum_str(weather.getDay0Hum_str());
                 todayPanel_bwp.setIconPath_str(weather.getDay0IconPath_str());
                 
-                firstDayPanel_smp.setDay_str(weather.getDay1_str());
+                firstDayPanel_smp.setDay_str(weatherPanel.convertDay(weather.getDay1_str()));
                 firstDayPanel_smp.setTempMax_str(weather.getDay1MaxTemp_str());
                 firstDayPanel_smp.setTempMin_str(weather.getDay1MinTemp_str());
                 firstDayPanel_smp.setIconPath_str(weather.getDay1IconPath_str());
                 
-                secondDayPanel_smp.setDay_str(weather.getDay2_str());
+                secondDayPanel_smp.setDay_str(weatherPanel.convertDay(weather.getDay2_str()));
                 secondDayPanel_smp.setTempMax_str(weather.getDay2MaxTemp_str());
                 secondDayPanel_smp.setTempMin_str(weather.getDay2MinTemp_str());
                 secondDayPanel_smp.setIconPath_str(weather.getDay2IconPath_str());
                 
-                thirdDayPanel_smp.setDay_str(weather.getDay3_str());
+                thirdDayPanel_smp.setDay_str(weatherPanel.convertDay(weather.getDay3_str()));
                 thirdDayPanel_smp.setTempMax_str(weather.getDay3MaxTemp_str());
                 thirdDayPanel_smp.setTempMin_str(weather.getDay3MinTemp_str());
                 thirdDayPanel_smp.setIconPath_str(weather.getDay3IconPath_str());
@@ -231,6 +231,21 @@ public class weatherPanel extends javax.swing.JPanel {
             //System.out.println(sdfmt.format(d));
             time_sjl.setText(sdfmt.format(d));
         }
+        
     }
+    
+    static public String convertDay(String day_str)
+    {
+        String newDay_str = "NA";
 
+        if(day_str.equalsIgnoreCase("Mon")){newDay_str = "Montag";}
+        else if(day_str.equalsIgnoreCase("Tue")){newDay_str = "Dienstag";}
+        else if(day_str.equalsIgnoreCase("Wed")){newDay_str = "Mittwoch";}
+        else if(day_str.equalsIgnoreCase("Thu")){newDay_str = "Donnerstag";}
+        else if(day_str.equalsIgnoreCase("Fri")){newDay_str = "Freitag";}
+        else if(day_str.equalsIgnoreCase("Sat")){newDay_str = "Samstag";}
+        else if(day_str.equalsIgnoreCase("Sun")){newDay_str = "Sonntag";}
+        else {newDay_str = "NA";}
+        return(newDay_str);
+    }
 }

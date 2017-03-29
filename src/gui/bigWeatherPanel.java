@@ -40,14 +40,16 @@ public class bigWeatherPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
 
         day_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 36)); // NOI18N
-        day_sjl.setText("Today");
+        day_sjl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        day_sjl.setText("Heute");
+        day_sjl.setToolTipText("");
 
         picture_sjl.setBackground(new java.awt.Color(204, 255, 204));
         picture_sjl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icon-set/GIF/250x250/blizzard.gif"))); // NOI18N
 
         minMax_sjl.setBackground(new java.awt.Color(255, 255, 255));
-        minMax_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        minMax_sjl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        minMax_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        minMax_sjl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         minMax_sjl.setText("(10°C/-05 °C)");
 
         temp_sjl.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
@@ -55,14 +57,16 @@ public class bigWeatherPanel extends javax.swing.JPanel {
         temp_sjl.setText("7");
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("°C");
 
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
-        jLabel3.setText("Temperature");
+        jLabel3.setText("Temperatur");
         jLabel3.setToolTipText("");
 
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
-        jLabel4.setText("Humidity");
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel4.setText("Luftfeuchtigkeit");
         jLabel4.setToolTipText("");
 
         hum_sjl.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
@@ -70,6 +74,7 @@ public class bigWeatherPanel extends javax.swing.JPanel {
         hum_sjl.setText("81");
 
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("%");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -79,21 +84,20 @@ public class bigWeatherPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(day_sjl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(minMax_sjl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(temp_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(hum_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(hum_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)))
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(minMax_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(day_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(picture_sjl)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -156,7 +160,7 @@ public class bigWeatherPanel extends javax.swing.JPanel {
 
     public void setTempMin_str(String newTempMin_str) {
         this.tempMin_str = newTempMin_str;
-        this.minMax_sjl.setText(tempMin_str + "°C/" + tempMax_str + "°C");
+        this.minMax_sjl.setText("(" + tempMin_str + "°C/" + tempMax_str + "°C)");
     }
 
     public String getTempMax_str() {
@@ -165,7 +169,7 @@ public class bigWeatherPanel extends javax.swing.JPanel {
 
     public void setTempMax_str(String newTempMax_str) {
         this.tempMax_str = newTempMax_str;
-        this.minMax_sjl.setText(tempMin_str + "°C/" + tempMax_str + "°C");
+        this.minMax_sjl.setText("(" + tempMin_str + "°C/" + tempMax_str + "°C)");
     }
 
     public String getTemp_str() {

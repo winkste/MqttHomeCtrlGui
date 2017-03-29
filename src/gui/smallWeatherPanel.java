@@ -39,7 +39,7 @@ public class smallWeatherPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         day_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        day_sjl.setText("Day");
+        day_sjl.setText("Mittwoch");
         add(day_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 2, -1, -1));
 
         picture_sjl.setBackground(new java.awt.Color(204, 255, 204));
@@ -47,6 +47,7 @@ public class smallWeatherPanel extends javax.swing.JPanel {
         add(picture_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 2, -1, -1));
 
         temp_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        temp_sjl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         temp_sjl.setText("-10°C/-05°C");
         temp_sjl.setSize(new java.awt.Dimension(162, 30));
         add(temp_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 38, -1, -1));
@@ -79,7 +80,7 @@ private String iconPath_str;
 
     public void setTempMin_str(String newTempMin_str) {
         this.tempMin_str = newTempMin_str;
-        this.temp_sjl.setText(tempMin_str + "/" + tempMax_str);
+        this.temp_sjl.setText("(" + tempMin_str + "°C/" + tempMax_str + "°C)");
     }
 
     public String getTempMax_str() {
@@ -88,7 +89,7 @@ private String iconPath_str;
 
     public void setTempMax_str(String newTempMax_str) {
         this.tempMax_str = newTempMax_str;
-        this.temp_sjl.setText(tempMin_str + "/" + tempMax_str);
+        this.temp_sjl.setText("(" + tempMin_str + "°C/" + tempMax_str + "°C)");
     }
 
     public String getIconPath_str() {

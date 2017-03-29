@@ -5,7 +5,8 @@
         <group>
             <file>file:/Users/stephan_wink/Documents/workspace_github/MqttHomeCtrlGui/src/gui/smallWeatherPanel.java</file>
             <file>file:/Users/stephan_wink/Documents/workspace_github/MqttHomeCtrlGui/src/control/MyWeather.java</file>
-            <file>file:/Users/stephan_wink/Documents/workspace_github/MqttHomeCtrlGui/src/gui/bigWeatherPanel.java</file>
+            <file>file:/Users/stephan_wink/Documents/workspace_github/MqttHomeCtrlGui/src/graph/MySensorPanel.java</file>
+            <file>file:/Users/stephan_wink/Documents/workspace_github/MqttHomeCtrlGui/src/launcher/TestApplic.java</file>
             <file>file:/Users/stephan_wink/Documents/workspace_github/MqttHomeCtrlGui/src/gui/weatherPanel.java</file>
         </group>
     </open-files>
