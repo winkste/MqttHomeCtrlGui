@@ -36,21 +36,36 @@ public class smallWeatherPanel extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(328, 154));
         setMinimumSize(new java.awt.Dimension(328, 154));
         setSize(new java.awt.Dimension(328, 154));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         day_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         day_sjl.setText("Mittwoch");
-        add(day_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 2, -1, -1));
 
         picture_sjl.setBackground(new java.awt.Color(204, 255, 204));
         picture_sjl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icon-set/GIF/150x150/blizzard.gif"))); // NOI18N
-        add(picture_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 2, -1, -1));
 
         temp_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         temp_sjl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         temp_sjl.setText("-10°C/-05°C");
-        temp_sjl.setSize(new java.awt.Dimension(162, 30));
-        add(temp_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 38, -1, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(day_sjl)
+                    .addComponent(temp_sjl))
+                .addGap(6, 6, 6)
+                .addComponent(picture_sjl))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(day_sjl)
+                .addGap(6, 6, 6)
+                .addComponent(temp_sjl))
+            .addComponent(picture_sjl)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
 

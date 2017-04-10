@@ -5,6 +5,8 @@
  */
 package procExe;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /**
@@ -44,6 +46,19 @@ public class ExePython {
         { 
             //Runtime.getRuntime().exec("xdg-open " + pythonFile);
             System.out.println("linux system");
+            String s;
+            Process p;
+            try {
+                System.out.println("python " + pythonFile);
+                p = Runtime.getRuntime().exec("python " + pythonFile);
+                BufferedReader br = new BufferedReader(
+                    new InputStreamReader(p.getInputStream()));
+                output = br.readLine();
+ 
+                p.waitFor();
+                System.out.println ("exit: " + p.exitValue());
+                p.destroy();
+            } catch (Exception e) {}
         }
         if (isOsxSystem())
         { 

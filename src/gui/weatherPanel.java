@@ -18,6 +18,9 @@ import procExe.ExePython;
  */
 public class weatherPanel extends javax.swing.JPanel {
 
+    private boolean firstTime_bol = true;
+    private int waitTime_i = 1000;
+    
     /**
      * Creates new form homeTempPanel
      */
@@ -170,7 +173,17 @@ public class weatherPanel extends javax.swing.JPanel {
             try 
             { 
                 // update cycle 1 minute
-                Thread.sleep(1000*60); 
+                //Thread.sleep(1000*60); 
+                if(firstTime_bol == true)
+                {
+                    Thread.sleep(waitTime_i);
+                    waitTime_i = waitTime_i * 60;
+                    firstTime_bol = false;
+                }
+                else
+                {
+                    Thread.sleep(waitTime_i);
+                }
             } catch ( InterruptedException e ) { }
           new DataCollector().execute();
           return (counter++);

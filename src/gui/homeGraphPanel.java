@@ -7,6 +7,7 @@ package gui;
 
 import graph.DataSetCallB;
 import graph.MySensorPanel;
+import javax.swing.SwingWorker;
 import myMqtt.MqttSubscriber;
 
 /**
@@ -18,6 +19,7 @@ public class homeGraphPanel extends javax.swing.JPanel {
     private MySensorPanel panel;
     private DataSetCallB tempCallBack;
     private DataSetCallB humCallBack;
+    private boolean genData = false;
 
     /**
      * Creates new form homeTempPanel
@@ -34,6 +36,18 @@ public class homeGraphPanel extends javax.swing.JPanel {
        
         graphPanel_sjp.add(panel.getPanel());
         
+    }
+    
+        public homeGraphPanel(String room, boolean newGenData) {
+        initComponents();
+        
+        panel = new MySensorPanel(room);
+        //panel.setSize(graphPanel_sjp.getSize());
+        tempCallBack = panel.getTempSetCallback();
+        humCallBack = panel.getHumSetCallback();   
+        graphPanel_sjp.add(panel.getPanel());
+        genData = newGenData;
+        new DataCollector().execute();
     }
 
     /**
@@ -100,6 +114,39 @@ public class homeGraphPanel extends javax.swing.JPanel {
                 humCallBack.setData(Float.parseFloat(msg));
             }
         });
+    }
+    
+    double temp = 25.0;
+    double hum = 45.0;
+        
+    class DataCollector extends SwingWorker<Long, Object>
+    {
+
+        @Override
+        protected Long doInBackground() throws Exception {
+            try 
+            { 
+                Thread.sleep(1000);
+            } catch ( InterruptedException e ) { }
+            new DataCollector().execute();
+            return (0L);
+        }
+        
+        @Override protected void done()
+        {
+            try
+            {
+                tempCallBack.setData(temp);
+                humCallBack.setData(hum);  
+                temp += 0.1;
+                hum += 0.1;
+                if(temp > 30.0)
+                    temp = 25.0;
+                if(hum > 49.0)
+                    hum = 45.0;
+            }
+            catch ( /* InterruptedException, ExecutionException */ Exception e ) { }
+        }
     }
 
 }

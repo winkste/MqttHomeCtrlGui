@@ -6,6 +6,7 @@
 package gui;
 
 import java.awt.Color;
+import javax.swing.SwingWorker;
 import myMqtt.MqttSubscriber;
 
 /**
@@ -16,6 +17,7 @@ public class homeTempPanel extends javax.swing.JPanel {
 
     private double humidityThreshold_d = 50.0;
     private Color standardBgColor_c; 
+    private boolean genData = false;
     /**
      * Creates new form homeTempPanel
      * @param room
@@ -24,6 +26,14 @@ public class homeTempPanel extends javax.swing.JPanel {
         initComponents();
         room_sjl.setText(room);
         standardBgColor_c = jPanel1.getBackground();
+    }
+    
+    public homeTempPanel(String room, boolean newGenData) {
+        initComponents();
+        room_sjl.setText(room);
+        genData = newGenData;
+        standardBgColor_c = jPanel1.getBackground();
+        new DataCollector().execute();
     }
 
     /**
@@ -58,6 +68,7 @@ public class homeTempPanel extends javax.swing.JPanel {
 
         temp_sjl.setFont(new java.awt.Font("Arial Black", 1, 110)); // NOI18N
         temp_sjl.setForeground(new java.awt.Color(102, 102, 102));
+        temp_sjl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         temp_sjl.setText("+00.0");
 
         jLabel3.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
@@ -76,6 +87,7 @@ public class homeTempPanel extends javax.swing.JPanel {
 
         humidity_sjl.setFont(new java.awt.Font("Arial Black", 1, 80)); // NOI18N
         humidity_sjl.setForeground(new java.awt.Color(102, 102, 102));
+        humidity_sjl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         humidity_sjl.setText("+00.0");
 
         jLabel7.setFont(new java.awt.Font("Arial Black", 0, 80)); // NOI18N
@@ -92,18 +104,18 @@ public class homeTempPanel extends javax.swing.JPanel {
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGap(0, 408, Short.MAX_VALUE)
                                 .addComponent(room_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(humidity_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(humidity_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel7))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 331, Short.MAX_VALUE)
-                        .addComponent(temp_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(temp_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel4)))
                 .addContainerGap())
@@ -163,7 +175,10 @@ public class homeTempPanel extends javax.swing.JPanel {
 
             @Override
             public void notify(String msg) {
-                temp_sjl.setText(msg);
+                if(genData != true)
+                {
+                    temp_sjl.setText(msg);
+                }
             }
         });
     }
@@ -177,15 +192,18 @@ public class homeTempPanel extends javax.swing.JPanel {
 
             @Override
             public void notify(String msg) {
-                humidity_sjl.setText(msg);
-                if(humidityThreshold_d < Float.parseFloat(msg))
+                if(genData != true)
                 {
-                    jPanel1.setBackground(new java.awt.Color(255,102,102)); 
-                    
-                }
-                else
-                {
-                    jPanel1.setBackground(standardBgColor_c);
+                    humidity_sjl.setText(msg);
+                    if(humidityThreshold_d < Float.parseFloat(msg))
+                    {
+                        jPanel1.setBackground(new java.awt.Color(255,102,102)); 
+
+                    }
+                    else
+                    {
+                        jPanel1.setBackground(standardBgColor_c);
+                    }
                 }
             }
         });
@@ -194,6 +212,38 @@ public class homeTempPanel extends javax.swing.JPanel {
     public void SetHumidityThreshold(double newThreshold_d){
         humidityThreshold_d = newThreshold_d;
     }
-            
+     
+    double temp = 25.0;
+    double hum = 45.0;
+        
+    class DataCollector extends SwingWorker<Long, Object>
+    {
 
+        @Override
+        protected Long doInBackground() throws Exception {
+            try 
+            { 
+                Thread.sleep(1000);
+            } catch ( InterruptedException e ) { }
+            new DataCollector().execute();
+            return (0L);
+        }
+        
+        @Override protected void done()
+        {
+            try
+            {
+                temp_sjl.setText(String.format("%2.2f",temp));
+                //System.out.println("" + String.format("%2.2f",temp));
+                humidity_sjl.setText(String.format("%2.2f",hum));  
+                temp += 0.1;
+                hum += 0.1;
+                if(temp > 30.0)
+                    temp = 25.0;
+                if(hum > 49.0)
+                    hum = 45.0;
+            }
+            catch ( /* InterruptedException, ExecutionException */ Exception e ) { }
+        }
+    }
 }

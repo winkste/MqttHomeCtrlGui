@@ -61,29 +61,30 @@ public class TestApplic {
                 valvePanel = new gui.valvePanel();
                 homeGraph = new gui.homeGraphPanel("Wohnzimmer");
                 myStartFrame = new startFrame();
-                hallTempPanel = new gui.homeTempPanel("Flur");
-                hallGraph = new gui.homeGraphPanel("Flur");
+                hallTempPanel = new gui.homeTempPanel("Carport");
+                hallGraph = new gui.homeGraphPanel("Carport");
               
                 MyMqttClient client = new MyMqttClient();      
                 client.connectClient("tcp://192.168.178.43:1883", "macBook_pro");  
+                //client.connectClient("tcp://172.20.10.10:1883", "macBook_pro"); 
                 client.setSubscriber(tempPanel.getMqttSubscriberTemperature("/fhem/esp/1/Temperature"));
                 client.setSubscriber(tempPanel.getMqttSubscriberHumidity("/fhem/esp/1/Humidity"));
                 tempPanel.SetHumidityThreshold(50.0);
                 client.setSubscriber(homeGraph.getMqttSubscriberTemperature("/fhem/esp/1/Temperature"));
                 client.setSubscriber(homeGraph.getMqttSubscriberHumidity("/fhem/esp/1/Humidity"));
                 
-                client.setSubscriber(hallTempPanel.getMqttSubscriberTemperature("/fhem/esp/4/Temperature"));
-                client.setSubscriber(hallTempPanel.getMqttSubscriberHumidity("/fhem/esp/4/Humidity"));
+                client.setSubscriber(hallTempPanel.getMqttSubscriberTemperature("/fhem/esp/7/Temperature"));
+                client.setSubscriber(hallTempPanel.getMqttSubscriberHumidity("/fhem/esp/7/Humidity"));
                 hallTempPanel.SetHumidityThreshold(50.0);
-                client.setSubscriber(hallGraph.getMqttSubscriberTemperature("/fhem/esp/4/Temperature"));
-                client.setSubscriber(hallGraph.getMqttSubscriberHumidity("/fhem/esp/4/Humidity"));
+                client.setSubscriber(hallGraph.getMqttSubscriberTemperature("/fhem/esp/7/Temperature"));
+                client.setSubscriber(hallGraph.getMqttSubscriberHumidity("/fhem/esp/7/Humidity"));
                 
-                myStartFrame.addPanel(buttonPanel);
+                //myStartFrame.addPanel(buttonPanel);
                 myStartFrame.addPanel(weatherPanel);
-                myStartFrame.addPanel(tempPanel);
+                //myStartFrame.addPanel(tempPanel);
                 myStartFrame.addPanel(hallTempPanel);
-                myStartFrame.addPanel(valvePanel);
-                myStartFrame.addPanel(homeGraph);
+                //myStartFrame.addPanel(valvePanel);
+                //myStartFrame.addPanel(homeGraph);
                 myStartFrame.addPanel(hallGraph);
               
                 myStartFrame.setVisible(true);

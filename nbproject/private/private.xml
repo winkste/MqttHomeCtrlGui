@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/stephan_wink/Documents/workspace_github/MqttHomeCtrlGui/src/gui/smallWeatherPanel.java</file>
+            <file>file:/Users/stephan_wink/Documents/workspace_github/MqttHomeCtrlGui/src/gui/homeGraphPanel.java</file>
             <file>file:/Users/stephan_wink/Documents/workspace_github/MqttHomeCtrlGui/src/control/MyWeather.java</file>
-            <file>file:/Users/stephan_wink/Documents/workspace_github/MqttHomeCtrlGui/src/graph/MySensorPanel.java</file>
             <file>file:/Users/stephan_wink/Documents/workspace_github/MqttHomeCtrlGui/src/launcher/TestApplic.java</file>
+            <file>file:/Users/stephan_wink/Documents/workspace_github/MqttHomeCtrlGui/src/gui/bigWeatherPanel.java</file>
+            <file>file:/Users/stephan_wink/Documents/workspace_github/MqttHomeCtrlGui/src/gui/homeTempPanel.java</file>
+            <file>file:/Users/stephan_wink/Documents/workspace_github/MqttHomeCtrlGui/src/control/sysControl.java</file>
+            <file>file:/Users/stephan_wink/Documents/workspace_github/MqttHomeCtrlGui/src/procExe/DataCallback.java</file>
             <file>file:/Users/stephan_wink/Documents/workspace_github/MqttHomeCtrlGui/src/gui/weatherPanel.java</file>
         </group>
     </open-files>
