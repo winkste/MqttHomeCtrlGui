@@ -177,7 +177,7 @@ public class weatherPanel extends javax.swing.JPanel {
                 if(firstTime_bol == true)
                 {
                     Thread.sleep(waitTime_i);
-                    waitTime_i = waitTime_i * 60;
+                    waitTime_i = waitTime_i * 60 * 10;  // 10mins
                     firstTime_bol = false;
                 }
                 else
@@ -194,7 +194,7 @@ public class weatherPanel extends javax.swing.JPanel {
             try
             {
                 lastWeatherSet_str = ExePython.execPython("requestWeather.py");
-                System.out.println(lastWeatherSet_str);
+                //System.out.println(lastWeatherSet_str);
                 MyWeather weather = new MyWeather(lastWeatherSet_str);
                 todayPanel_bwp.setDay_str(weatherPanel.convertDay(weather.getDay0_str()));
                 todayPanel_bwp.setTempMin_str(weather.getDay0MinTemp_str());
@@ -232,7 +232,7 @@ public class weatherPanel extends javax.swing.JPanel {
             
             SimpleDateFormat sdfmt = new SimpleDateFormat();
             sdfmt.applyPattern( "EEEE', 'dd. MMMM yyyy hh:mm" );
-            System.out.println(sdfmt.format(d));
+            //System.out.println(sdfmt.format(d));
             
             sdfmt = new SimpleDateFormat();
             sdfmt.applyPattern( "EEEE', 'dd. MMMM yyyy" );

@@ -84,7 +84,7 @@ public class MySensorPanel {
             @Override
             public void setData(double data_d) {
                 Millisecond now = new Millisecond();
-                System.out.println("Now1 = " + now.toString());
+                //System.out.println("Now1 = " + now.toString());
                 series1.add(new Millisecond(), data_d);
             }
         });
@@ -95,7 +95,7 @@ public class MySensorPanel {
             @Override
             public void setData(double data_d) {
                 Millisecond now = new Millisecond();
-                System.out.println("Now2 = " + now.toString());
+                //System.out.println("Now2 = " + now.toString());
                 series2.add(new Millisecond(), data_d);
             }
         });

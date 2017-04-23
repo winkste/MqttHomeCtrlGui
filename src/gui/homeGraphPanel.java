@@ -39,15 +39,15 @@ public class homeGraphPanel extends javax.swing.JPanel {
     }
     
         public homeGraphPanel(String room, boolean newGenData) {
-        initComponents();
-        
-        panel = new MySensorPanel(room);
-        //panel.setSize(graphPanel_sjp.getSize());
-        tempCallBack = panel.getTempSetCallback();
-        humCallBack = panel.getHumSetCallback();   
-        graphPanel_sjp.add(panel.getPanel());
-        genData = newGenData;
-        new DataCollector().execute();
+            initComponents();
+
+            panel = new MySensorPanel(room);
+            //panel.setSize(graphPanel_sjp.getSize());
+            tempCallBack = panel.getTempSetCallback();
+            humCallBack = panel.getHumSetCallback();   
+            graphPanel_sjp.add(panel.getPanel());
+            genData = newGenData;
+            new DataCollector().execute();
     }
 
     /**

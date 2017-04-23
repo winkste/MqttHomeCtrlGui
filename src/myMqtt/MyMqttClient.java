@@ -21,23 +21,65 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
  */
 public class MyMqttClient implements MqttCallback 
 {
-    private MqttClient client;
-    private final int INIT = 0;
-    private final int CONNECTED = 1;
-    private int clientState = INIT;
+    private MqttClient client = null;
     private List<MqttSubscriber> subsList = new ArrayList<MqttSubscriber>();
+    private String address;
+    private String identifier;
     
-    public void connectClient(String address, String identifier)
-    {
-        try{
-            /*client = new MqttClient("tcp://192.168.178.43:1883", "macBook_pro");*/
-            client = new MqttClient(address, identifier);
-            client.setCallback(this);
-            client.connect();
-            clientState = CONNECTED;
-        } catch (MqttException ex) {
-            Logger.getLogger(MyMqttClient.class.getName()).log(Level.SEVERE, null, ex);
+    private static final class InstanceHolder {
+        static final MyMqttClient INSTANCE = new MyMqttClient();
+    }
+    
+    private MyMqttClient(){}
+    
+    public static MyMqttClient getInstance () {
+        return InstanceHolder.INSTANCE;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
+    }
+    
+    public void connectClient()
+    {        
+        if(null == client)
+        {
+            try{
+                client = new MqttClient(address, identifier);
+                client.setCallback(this);
+                client.connect();
+            } catch (MqttException ex) {
+                Logger.getLogger(MyMqttClient.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
+        else
+        {
+            if(client.isConnected() == true)
+            {
+                try {
+                    client.disconnect();
+                    client = null;
+                    client = new MqttClient(address, identifier);
+                    client.setCallback(this);
+                    client.connect();
+                } catch (MqttException ex) {
+                    Logger.getLogger(MyMqttClient.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+
     }
     
     public void setSubscriber(MqttSubscriber subs)
@@ -52,13 +94,13 @@ public class MyMqttClient implements MqttCallback
 
     @Override
     public void connectionLost(Throwable thrwbl) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         System.out.println("TODO: handle connection lost exception");
     }
 
     @Override
     public void messageArrived(String filter, MqttMessage mm) throws Exception 
     {
-        System.out.println("Filter: " + filter + "Msg: " + new String(mm.getPayload()));
+        //System.out.println("Filter: " + filter + "Msg: " + new String(mm.getPayload()));
         for(int idx = 0; idx < subsList.size(); idx++)
         {
             if(subsList.get(idx).getFilter().equals(filter))

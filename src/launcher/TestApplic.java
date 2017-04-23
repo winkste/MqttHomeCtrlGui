@@ -17,12 +17,13 @@ public class TestApplic {
   
   public static gui.buttonPanel buttonPanel;
   public static gui.weatherPanel weatherPanel;
-  public static gui.homeTempPanel tempPanel;
+  public static gui.homeTempPanel tempPanelLivingRoom;
   public static gui.valvePanel valvePanel;
-  public static gui.homeGraphPanel homeGraph;
+  public static gui.homeGraphPanel graphLivingRoom;
   public static gui.startFrame myStartFrame;
-  public static gui.homeTempPanel hallTempPanel;
-  public static gui.homeGraphPanel hallGraph;
+  public static gui.homeTempPanel carportTempPanel;
+  public static gui.homeGraphPanel graphCarport;
+  public static gui.homeAreaPanel areaGraph;
 
     /**
      * @param args the command line arguments
@@ -57,36 +58,50 @@ public class TestApplic {
             {
                 buttonPanel = new gui.buttonPanel();
                 weatherPanel = new gui.weatherPanel(); 
-                tempPanel = new gui.homeTempPanel("Wohnzimmer");
+                tempPanelLivingRoom = new gui.homeTempPanel("Wohnzimmer");
                 valvePanel = new gui.valvePanel();
-                homeGraph = new gui.homeGraphPanel("Wohnzimmer");
+                graphLivingRoom = new gui.homeGraphPanel("Wohnzimmer");
                 myStartFrame = new startFrame();
-                hallTempPanel = new gui.homeTempPanel("Carport");
-                hallGraph = new gui.homeGraphPanel("Carport");
-              
-                MyMqttClient client = new MyMqttClient();      
-                client.connectClient("tcp://192.168.178.43:1883", "macBook_pro");  
-                //client.connectClient("tcp://172.20.10.10:1883", "macBook_pro"); 
-                client.setSubscriber(tempPanel.getMqttSubscriberTemperature("/fhem/esp/1/Temperature"));
-                client.setSubscriber(tempPanel.getMqttSubscriberHumidity("/fhem/esp/1/Humidity"));
-                tempPanel.SetHumidityThreshold(50.0);
-                client.setSubscriber(homeGraph.getMqttSubscriberTemperature("/fhem/esp/1/Temperature"));
-                client.setSubscriber(homeGraph.getMqttSubscriberHumidity("/fhem/esp/1/Humidity"));
+                carportTempPanel = new gui.homeTempPanel("Carport");
+                graphCarport = new gui.homeGraphPanel("Carport");
+                areaGraph = new gui.homeAreaPanel();
+               
+                MyMqttClient client = MyMqttClient.getInstance();
+                client.setAddress("tcp://192.168.178.43:1883");
+                client.setIdentifier("macBook_pro");
+                client.connectClient();
+
+                client.setSubscriber(tempPanelLivingRoom.getMqttSubscriberTemperature("/fhem/esp/1/Temperature"));
+                client.setSubscriber(tempPanelLivingRoom.getMqttSubscriberHumidity("/fhem/esp/1/Humidity"));
+                tempPanelLivingRoom.SetHumidityThreshold(50.0);
+                client.setSubscriber(graphLivingRoom.getMqttSubscriberTemperature("/fhem/esp/1/Temperature"));
+                client.setSubscriber(graphLivingRoom.getMqttSubscriberHumidity("/fhem/esp/1/Humidity"));
                 
-                client.setSubscriber(hallTempPanel.getMqttSubscriberTemperature("/fhem/esp/7/Temperature"));
-                client.setSubscriber(hallTempPanel.getMqttSubscriberHumidity("/fhem/esp/7/Humidity"));
-                hallTempPanel.SetHumidityThreshold(50.0);
-                client.setSubscriber(hallGraph.getMqttSubscriberTemperature("/fhem/esp/7/Temperature"));
-                client.setSubscriber(hallGraph.getMqttSubscriberHumidity("/fhem/esp/7/Humidity"));
+                client.setSubscriber(carportTempPanel.getMqttSubscriberTemperature("/fhem/esp/7/Temperature"));
+                client.setSubscriber(carportTempPanel.getMqttSubscriberHumidity("/fhem/esp/7/Humidity"));
+                carportTempPanel.SetHumidityThreshold(50.0);
+                client.setSubscriber(graphCarport.getMqttSubscriberTemperature("/fhem/esp/7/Temperature"));
+                client.setSubscriber(graphCarport.getMqttSubscriberHumidity("/fhem/esp/7/Humidity"));
+                
+                client.setSubscriber(areaGraph.getMqttSubscriberCarportTemperature("/fhem/esp/7/Temperature"));
+                client.setSubscriber(areaGraph.getMqttSubscriberCarportHumidity("/fhem/esp/7/Humidity"));
+                client.setSubscriber(areaGraph.getMqttSubscriberLivingTemperature("/fhem/esp/1/Temperature"));
+                client.setSubscriber(areaGraph.getMqttSubscriberLivingHumidity("/fhem/esp/1/Humidity"));
+                client.setSubscriber(areaGraph.getMqttSubscriberHallTemperature("/fhem/esp/4/Temperature"));
+                client.setSubscriber(areaGraph.getMqttSubscriberHallHumidity("/fhem/esp/4/Humidity"));
+                client.setSubscriber(areaGraph.getMqttSubscriberKitchenTemperature("/fhem/esp/2/Temperature"));
+                client.setSubscriber(areaGraph.getMqttSubscriberKitchenHumidity("/fhem/esp/2/Humidity"));
                 
                 //myStartFrame.addPanel(buttonPanel);
                 myStartFrame.addPanel(weatherPanel);
-                //myStartFrame.addPanel(tempPanel);
-                myStartFrame.addPanel(hallTempPanel);
+                myStartFrame.addPanel(tempPanelLivingRoom);
+                myStartFrame.addPanel(graphLivingRoom);
+                myStartFrame.addPanel(carportTempPanel);
+                myStartFrame.addPanel(graphCarport);
+                
+                myStartFrame.addPanel(areaGraph);
                 //myStartFrame.addPanel(valvePanel);
-                //myStartFrame.addPanel(homeGraph);
-                myStartFrame.addPanel(hallGraph);
-              
+                
                 myStartFrame.setVisible(true);
                 //new startFrame().setVisible(true);
             }
