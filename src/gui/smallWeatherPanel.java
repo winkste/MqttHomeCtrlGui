@@ -41,9 +41,9 @@ public class smallWeatherPanel extends javax.swing.JPanel {
         day_sjl.setText("Mittwoch");
 
         picture_sjl.setBackground(new java.awt.Color(204, 255, 204));
-        picture_sjl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icon-set/GIF/150x150/blizzard.gif"))); // NOI18N
+        picture_sjl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icon-set/GIF/50x50/chance-storm-n.gif"))); // NOI18N
 
-        temp_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        temp_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         temp_sjl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         temp_sjl.setText("-10°C/-05°C");
 
@@ -54,17 +54,21 @@ public class smallWeatherPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(day_sjl)
-                    .addComponent(temp_sjl))
-                .addGap(6, 6, 6)
-                .addComponent(picture_sjl))
+                    .addComponent(temp_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(picture_sjl)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(day_sjl)
-                .addGap(6, 6, 6)
-                .addComponent(temp_sjl))
-            .addComponent(picture_sjl)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(picture_sjl)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(day_sjl)
+                        .addGap(6, 6, 6)
+                        .addComponent(temp_sjl)))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 

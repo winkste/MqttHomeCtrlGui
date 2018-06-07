@@ -31,19 +31,19 @@ public class MyWeather {
     private String day1MaxTemp_str = "12";
     private String day1MinTemp_str = "-13";
     private String day1Weather_str = "sunny";
-    private String day1IconPath_str = "/resources/icon-set/GIF/250x250/moon.gif";
+    private String day1IconPath_str = "/resources/icon-set/GIF/50x50/moon.gif";
     
     private String day2_str = "Tue";
     private String day2MaxTemp_str = "12";
     private String day2MinTemp_str = "-13";
     private String day2Weather_str = "sunny";
-    private String day2IconPath_str = "/resources/icon-set/GIF/250x250/moon.gif";
+    private String day2IconPath_str = "/resources/icon-set/GIF/50x50/moon.gif";
     
     private String day3_str = "Tue";
     private String day3MaxTemp_str = "12";
     private String day3MinTemp_str = "-13";
     private String day3Weather_str = "sunny";
-    private String day3IconPath_str = "/resources/icon-set/GIF/250x250/moon.gif";
+    private String day3IconPath_str = "/resources/icon-set/GIF/50x50/moon.gif";
     
     public MyWeather(String msg_str)
     {
@@ -279,63 +279,63 @@ public class MyWeather {
         switch(weather_str){
             case "Chance of Flurries":
             case "Flurries":
-                iconPath_str = "/resources/icon-set/GIF/150x150/flurries.gif";
+                iconPath_str = "/resources/icon-set/GIF/50x50/flurries.gif";
                 break;
             case "Chance of Rain":
             case "Chance Rain":
-                iconPath_str = "/resources/icon-set/GIF/150x150/fair-drizzle.gif";
+                iconPath_str = "/resources/icon-set/GIF/50x50/fair-drizzle.gif";
                 break;
             case "Chance of Freezing Rain":
             case "Freezing Rain":
-                iconPath_str = "/resources/icon-set/GIF/150x150/freezing-rain.gif";
+                iconPath_str = "/resources/icon-set/GIF/50x50/freezing-rain.gif";
                 break;
             case "Chance of Sleet":
             case "Sleet":
-                iconPath_str = "/resources/icon-set/GIF/150x150/sleet.gif";
+                iconPath_str = "/resources/icon-set/GIF/50x50/sleet.gif";
                 break;
             case "Chance of Snow":
-                iconPath_str = "/resources/icon-set/GIF/150x150/snow.gif";
+                iconPath_str = "/resources/icon-set/GIF/50x50/snow.gif";
                 break;
             case "Chance of a Thunderstorm":
             case "Chance of Thunderstorms":
-                iconPath_str = "/resources/icon-set/GIF/150x150/thunder-storm.gif";
+                iconPath_str = "/resources/icon-set/GIF/50x50/thunder-storm.gif";
                 break;
             case "Clear":
             case "Sunny":
-                iconPath_str = "/resources/icon-set/GIF/150x150/sunny.gif";
+                iconPath_str = "/resources/icon-set/GIF/50x50/sunny.gif";
                 break;
             case "Cloudy":
             case "Overcast":
-                iconPath_str = "/resources/icon-set/GIF/150x150/cloudy.gif";
+                iconPath_str = "/resources/icon-set/GIF/50x50/cloudy.gif";
                 break;
             case "Fog":
-                iconPath_str = "/resources/icon-set/GIF/150x150/fog.gif";
+                iconPath_str = "/resources/icon-set/GIF/50x50/fog.gif";
                 break;
             case "Haze":
-                iconPath_str = "/resources/icon-set/GIF/150x150/hazy.gif";
+                iconPath_str = "/resources/icon-set/GIF/50x50/hazy.gif";
                 break;
             case "Mostly Cloudy":
             case "Mostly Sunny":
             case "Partly Cloudy":
             case "Partly Sunny":
             case "Scattered Clouds":
-                iconPath_str = "/resources/icon-set/GIF/150x150/m-cloudy.gif";
+                iconPath_str = "/resources/icon-set/GIF/50x50/m-cloudy.gif";
                 break;
             case "Rain":
-                iconPath_str = "/resources/icon-set/GIF/150x150/rainy.gif";
+                iconPath_str = "/resources/icon-set/GIF/50x50/rainy.gif";
                 break;
             case "Snow":
-                iconPath_str = "/resources/icon-set/GIF/150x150/snow.gif";
+                iconPath_str = "/resources/icon-set/GIF/50x50/snow.gif";
                 break;
             case "Thunderstorms":
             case "Thunderstorm":
-                iconPath_str = "/resources/icon-set/GIF/150x150/thunder-storm.gif";
+                iconPath_str = "/resources/icon-set/GIF/50x50/thunder-storm.gif";
                 break;
             case "Unknown":
-                iconPath_str = "/resources/icon-set/GIF/150x150/na.gif";
+                iconPath_str = "/resources/icon-set/GIF/50x50/na.gif";
                 break;
             default:
-                iconPath_str = "/resources/icon-set/GIF/150x150/na.gif";
+                iconPath_str = "/resources/icon-set/GIF/50x50/na.gif";
                 break;
         }
           

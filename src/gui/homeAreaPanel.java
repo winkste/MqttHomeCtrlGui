@@ -56,78 +56,78 @@ public class homeAreaPanel extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Carport");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 80, 30));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 80, 30));
 
         carport_sjl.setBackground(new java.awt.Color(255, 255, 255));
         carport_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         carport_sjl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         carport_sjl.setText("(+12°C/10%)");
-        jPanel1.add(carport_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 130, -1));
+        jPanel1.add(carport_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 130, -1));
 
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Küche");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 50, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, 50, -1));
 
         kitchen_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         kitchen_sjl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         kitchen_sjl.setText("(+12°C/40%)");
-        jPanel1.add(kitchen_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 340, 160, -1));
+        jPanel1.add(kitchen_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, 160, -1));
 
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Wohnzimmer");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 130, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, -1, -1));
 
         livRoom_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         livRoom_sjl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         livRoom_sjl.setText("(+12°C/40%)");
-        jPanel1.add(livRoom_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 150, 140, -1));
+        jPanel1.add(livRoom_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 120, 140, -1));
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Flur");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, -1, -1));
 
         hall_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         hall_sjl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         hall_sjl.setText("(+12°C/40%)");
-        jPanel1.add(hall_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 160, -1, -1));
+        jPanel1.add(hall_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Gäste WC");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
 
         guestWc_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         guestWc_sjl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         guestWc_sjl.setText("(+12°C/40%)");
-        jPanel1.add(guestWc_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, -1, -1));
+        jPanel1.add(guestWc_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Außen");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, -1, -1));
 
         outside_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         outside_sjl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         outside_sjl.setText("(-05°C/40%)");
         outside_sjl.setToolTipText("");
-        jPanel1.add(outside_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, -1, -1));
+        jPanel1.add(outside_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/home/eg.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 3, 1006, 449));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-140, 0, 920, 380));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1012, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
