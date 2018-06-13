@@ -162,7 +162,7 @@ public class weatherPanel extends javax.swing.JPanel {
 
     private String lastWeatherSet_str;
     public static long counter = 1;
-    private int minCounter_i = 100;
+    private int minCounter_i = 5;
     
     class DataCollector extends SwingWorker<Long, Object>
     {       

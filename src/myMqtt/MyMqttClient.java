@@ -126,6 +126,7 @@ public class MyMqttClient implements MqttCallback
             @Override
             public void publish(String msg) {
                 try {
+                    System.out.println("mqtt publisher -> " + this.getFilter() + msg);
                     MqttMessage message = new MqttMessage(msg.getBytes());
                     client.publish(this.getFilter(), message);
                 } catch (MqttException ex) {
