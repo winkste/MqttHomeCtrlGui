@@ -20,6 +20,7 @@ public class TestApplic {
   public static gui.homeTempPanel tempPanelLivingRoom;
   public static gui.valvePanel valvePanel;
   public static gui.roomControl graphLivingRoom;
+  public static gui.roomControl roomHall;
   public static gui.startFrame myStartFrame;
   public static gui.homeTempPanel carportTempPanel;
   public static gui.homeGraphPanel graphCarport;
@@ -63,6 +64,7 @@ public class TestApplic {
                 tempPanelLivingRoom = new gui.homeTempPanel("Wohnzimmer");
                 valvePanel = new gui.valvePanel();
                 graphLivingRoom = new gui.roomControl("Wohnzimmer");
+                roomHall = new gui.roomControl("Flur");
                 myStartFrame = new startFrame();
                 carportTempPanel = new gui.homeTempPanel("Carport");
                 graphCarport = new gui.homeGraphPanel("Carport");
@@ -107,6 +109,11 @@ public class TestApplic {
                 client.setSubscriber(graphLivingRoom.getMqttSubscriberHumidity("std/dev30/s/bme/hum"));
                 graphLivingRoom.SetPublisherForButton1(client.createPublisher("std/dev01/r/so_basic/switch"), "Lampe Fenster");
                 
+                client.setSubscriber(roomHall.getMqttSubscriberTemperature("std/dev27/s/temp_hum/temp"));
+                client.setSubscriber(roomHall.getMqttSubscriberHumidity("std/dev27/s/temp_hum/hum"));
+                roomHall.SetPublisherForButton1(client.createPublisher("std/dev02/r/so_basic/switch"), "Kugel klein");
+                roomHall.SetPublisherForButton2(client.createPublisher("std/dev04/r/so_basic/switch"), "Kugel groß");
+                            
                 client.setSubscriber(carportTempPanel.getMqttSubscriberTemperature("std/dev22/s/temp_hum/temp"));
                 client.setSubscriber(carportTempPanel.getMqttSubscriberHumidity("std/dev22/s/temp_hum/hum"));
                 carportTempPanel.SetHumidityThreshold(50.0);
@@ -127,6 +134,7 @@ public class TestApplic {
                 myStartFrame.addPanel(weatherPanel);
                 myStartFrame.addPanel(tempPanelLivingRoom);
                 myStartFrame.addPanel(graphLivingRoom);
+                myStartFrame.addPanel(roomHall);
                 myStartFrame.addPanel(carportTempPanel);
                 myStartFrame.addPanel(graphCarport);
                 
