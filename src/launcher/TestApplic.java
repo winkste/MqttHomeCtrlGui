@@ -19,7 +19,7 @@ public class TestApplic {
   public static gui.weatherPanel weatherPanel;
   public static gui.homeTempPanel tempPanelLivingRoom;
   public static gui.valvePanel valvePanel;
-  public static gui.homeGraphPanel graphLivingRoom;
+  public static gui.roomControl graphLivingRoom;
   public static gui.startFrame myStartFrame;
   public static gui.homeTempPanel carportTempPanel;
   public static gui.homeGraphPanel graphCarport;
@@ -62,7 +62,7 @@ public class TestApplic {
                 weatherPanel = new gui.weatherPanel(); 
                 tempPanelLivingRoom = new gui.homeTempPanel("Wohnzimmer");
                 valvePanel = new gui.valvePanel();
-                graphLivingRoom = new gui.homeGraphPanel("Wohnzimmer");
+                graphLivingRoom = new gui.roomControl("Wohnzimmer");
                 myStartFrame = new startFrame();
                 carportTempPanel = new gui.homeTempPanel("Carport");
                 graphCarport = new gui.homeGraphPanel("Carport");
@@ -77,34 +77,35 @@ public class TestApplic {
                 client.setSubscriber(gardenCtrl.getMqttSubscriberHumidity("std/dev28/s/temp_hum/hum"));
                 
                 client.setSubscriber(gardenCtrl.getMqttSubscriberRelay1("std/dev50/s/relay_one/status"));
-                gardenCtrl.SetPublisher1(client.createPublisher("std/dev50/r/relay_one/switch"));
+                gardenCtrl.SetPublisher1(client.createPublisher("std/dev50/r/relay_one/switch"), "Pool Pumpe");
                 
                 client.setSubscriber(gardenCtrl.getMqttSubscriberRelay2("std/dev50/s/relay_two/status"));
-                gardenCtrl.SetPublisher2(client.createPublisher("std/dev50/r/relay_two/switch"));
+                gardenCtrl.SetPublisher2(client.createPublisher("std/dev50/r/relay_two/switch"), "Teich Pumpe");
                 
                 client.setSubscriber(gardenCtrl.getMqttSubscriberRelay3("std/dev50/s/relay_three/status"));
-                gardenCtrl.SetPublisher3(client.createPublisher("std/dev50/r/relay_three/switch"));
+                gardenCtrl.SetPublisher3(client.createPublisher("std/dev50/r/relay_three/switch"), "Teich Luft");
                 
                 client.setSubscriber(gardenCtrl.getMqttSubscriberRelay4("std/dev50/s/relay_four/status"));
-                gardenCtrl.SetPublisher4(client.createPublisher("std/dev50/r/relay_four/switch"));
+                gardenCtrl.SetPublisher4(client.createPublisher("std/dev50/r/relay_four/switch"), "Steckdose 4");
                 
                 client.setSubscriber(gardenCtrl.getMqttSubscriberRelay5("std/dev50/s/relay_five/status"));
-                gardenCtrl.SetPublisher5(client.createPublisher("std/dev50/r/relay_five/switch"));
+                gardenCtrl.SetPublisher5(client.createPublisher("std/dev50/r/relay_five/switch"), "Wandbeleuchtung");
                 
                 client.setSubscriber(gardenCtrl.getMqttSubscriberRelay6("std/dev50/s/relay_six/status"));
-                gardenCtrl.SetPublisher6(client.createPublisher("std/dev50/r/relay_six/switch"));
+                gardenCtrl.SetPublisher6(client.createPublisher("std/dev50/r/relay_six/switch"), "Stehlampe");
                 
                 client.setSubscriber(gardenCtrl.getMqttSubscriberRelay7("std/dev50/s/relay_seven/status"));
-                gardenCtrl.SetPublisher7(client.createPublisher("std/dev50/r/relay_seven/switch"));
+                gardenCtrl.SetPublisher7(client.createPublisher("std/dev50/r/relay_seven/switch"), "Terasse Boden");
                 
                 client.setSubscriber(gardenCtrl.getMqttSubscriberRelay8("std/dev50/s/relay_eigth/status"));
-                gardenCtrl.SetPublisher8(client.createPublisher("std/dev50/r/relay_eight/switch"));
+                gardenCtrl.SetPublisher8(client.createPublisher("std/dev50/r/relay_eight/switch"), "Garten 8");
 
                 client.setSubscriber(tempPanelLivingRoom.getMqttSubscriberTemperature("std/dev30/s/bme/temp"));
                 client.setSubscriber(tempPanelLivingRoom.getMqttSubscriberHumidity("std/dev30/s/bme/hum"));
                 tempPanelLivingRoom.SetHumidityThreshold(50.0);
                 client.setSubscriber(graphLivingRoom.getMqttSubscriberTemperature("std/dev30/s/bme/temp"));
                 client.setSubscriber(graphLivingRoom.getMqttSubscriberHumidity("std/dev30/s/bme/hum"));
+                graphLivingRoom.SetPublisherForButton1(client.createPublisher("std/dev01/r/so_basic/switch"), "Lampe Fenster");
                 
                 client.setSubscriber(carportTempPanel.getMqttSubscriberTemperature("std/dev22/s/temp_hum/temp"));
                 client.setSubscriber(carportTempPanel.getMqttSubscriberHumidity("std/dev22/s/temp_hum/hum"));

@@ -44,6 +44,7 @@ public class gardenControl extends javax.swing.JPanel {
         initComponents();
         room_sjl.setText(room);
         jPanel1.setBackground(new java.awt.Color(48,131,251));
+        SetButtonInvisible();
     }
     
     public gardenControl(String room, boolean newGenData) {
@@ -52,6 +53,7 @@ public class gardenControl extends javax.swing.JPanel {
         genData = newGenData;
         new DataCollector().execute();
         jPanel1.setBackground(new java.awt.Color(255,102,102));
+        SetButtonInvisible();
     }
 
     /**
@@ -81,7 +83,7 @@ public class gardenControl extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         humidity_sjl = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        label4_jl = new javax.swing.JLabel();
         moisture_sjl = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -98,7 +100,7 @@ public class gardenControl extends javax.swing.JPanel {
         jPanel2.setLayout(new java.awt.GridLayout(4, 2, 10, 5));
 
         relay1_jtb.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        relay1_jtb.setText("Pool Pumpe");
+        relay1_jtb.setText("Button 1");
         relay1_jtb.setEnabled(false);
         relay1_jtb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,7 +110,7 @@ public class gardenControl extends javax.swing.JPanel {
         jPanel2.add(relay1_jtb);
 
         relay2_jtb.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        relay2_jtb.setText("Teich Pumpe");
+        relay2_jtb.setText("Button 2");
         relay2_jtb.setEnabled(false);
         relay2_jtb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,7 +120,7 @@ public class gardenControl extends javax.swing.JPanel {
         jPanel2.add(relay2_jtb);
 
         relay3_jtb.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        relay3_jtb.setText("Teich Luft");
+        relay3_jtb.setText("Button 3");
         relay3_jtb.setEnabled(false);
         relay3_jtb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,7 +140,7 @@ public class gardenControl extends javax.swing.JPanel {
         jPanel2.add(relay4_jtb);
 
         relay5_jtb.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        relay5_jtb.setText("Wandbeleuchtung");
+        relay5_jtb.setText("Button 5");
         relay5_jtb.setEnabled(false);
         relay5_jtb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,7 +150,7 @@ public class gardenControl extends javax.swing.JPanel {
         jPanel2.add(relay5_jtb);
 
         relay6_jtb.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        relay6_jtb.setText("Stehlampe");
+        relay6_jtb.setText("Button 6");
         relay6_jtb.setEnabled(false);
         relay6_jtb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,7 +160,7 @@ public class gardenControl extends javax.swing.JPanel {
         jPanel2.add(relay6_jtb);
 
         relay7_jtb.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        relay7_jtb.setText("Terasse Boden");
+        relay7_jtb.setText("Button 7");
         relay7_jtb.setEnabled(false);
         relay7_jtb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,7 +170,7 @@ public class gardenControl extends javax.swing.JPanel {
         jPanel2.add(relay7_jtb);
 
         relay8_jtb.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        relay8_jtb.setText("Garten 8");
+        relay8_jtb.setText("Button 8");
         relay8_jtb.setToolTipText("");
         relay8_jtb.setEnabled(false);
         relay8_jtb.addActionListener(new java.awt.event.ActionListener() {
@@ -213,11 +215,11 @@ public class gardenControl extends javax.swing.JPanel {
         jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setText("%");
 
-        jLabel6.setFont(new java.awt.Font("LCD", 0, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel6.setText("Bodenfeuchtigkeit");
-        jLabel6.setToolTipText("");
-        jLabel6.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        label4_jl.setFont(new java.awt.Font("LCD", 0, 24)); // NOI18N
+        label4_jl.setForeground(new java.awt.Color(102, 102, 102));
+        label4_jl.setText("Bodenfeuchtigkeit");
+        label4_jl.setToolTipText("");
+        label4_jl.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         moisture_sjl.setFont(new java.awt.Font("LCD", 1, 48)); // NOI18N
         moisture_sjl.setForeground(new java.awt.Color(102, 102, 102));
@@ -240,7 +242,7 @@ public class gardenControl extends javax.swing.JPanel {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
+                                    .addComponent(label4_jl)
                                     .addComponent(jLabel5))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -263,10 +265,11 @@ public class gardenControl extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(room_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(temp_sjl))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel4)
+                        .addComponent(temp_sjl)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(humidity_sjl)
@@ -274,7 +277,7 @@ public class gardenControl extends javax.swing.JPanel {
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label4_jl, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(moisture_sjl)
                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)))
         );
@@ -287,7 +290,7 @@ public class gardenControl extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 324, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -361,12 +364,12 @@ public class gardenControl extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel label4_jl;
     private javax.swing.JLabel moisture_sjl;
     private javax.swing.JToggleButton relay1_jtb;
     private javax.swing.JToggleButton relay2_jtb;
@@ -531,21 +534,7 @@ public class gardenControl extends javax.swing.JPanel {
 
             @Override
             public void notify(String msg) {
-                System.out.println(msg);
-                if(msg.contains("ON"))
-                {
-                    relay7Active_bol = true;
-                }
-                else if(msg.contains("OFF"))
-                {
-                    relay7Active_bol = false;
-                }
-                else
-                {
-                    relay7Active_bol = false;
-                }
-                //relay7Active_bol = msg.contentEquals("ON") != true;
-                System.out.println("1 " + relay7Active_bol);
+                relay7Active_bol = msg.contains("ON");
                 UpdateButtonField();      
             }
         });
@@ -577,78 +566,104 @@ public class gardenControl extends javax.swing.JPanel {
         this.relay6_jtb.setSelected(this.relay6Active_bol);
         this.relay7_jtb.setSelected(this.relay7Active_bol);
         this.relay8_jtb.setSelected(this.relay8Active_bol);
-        
-        System.out.println(relay7Active_bol);
     }
     
-    public void SetPublisher1(MqttPublisher pub)
+    private void SetButtonInvisible()
+    {
+        this.relay1_jtb.setVisible(false);
+        this.relay2_jtb.setVisible(false);
+        this.relay3_jtb.setVisible(false);
+        this.relay4_jtb.setVisible(false);
+        this.relay5_jtb.setVisible(false);
+        this.relay6_jtb.setVisible(false);
+        this.relay7_jtb.setVisible(false);
+        this.relay8_jtb.setVisible(false);
+    }
+    
+    public void SetPublisher1(MqttPublisher pub, String buttonText)
     {      
         if(null != pub)
         {
             this.pub1 = pub;
-            this.relay1_jtb.setEnabled(true);
+            this.relay1_jtb.setText(buttonText);
+            this.relay1_jtb.setVisible(true);
+            this.relay1_jtb.setEnabled(true);          
         }           
     }
     
-    public void SetPublisher2(MqttPublisher pub)
+    public void SetPublisher2(MqttPublisher pub, String buttonText)
     {      
         if(null != pub)
         {
             this.pub2 = pub;
+            this.relay2_jtb.setText(buttonText);
+            this.relay2_jtb.setVisible(true);
             this.relay2_jtb.setEnabled(true);
         }           
     }
     
-    public void SetPublisher3(MqttPublisher pub)
+    public void SetPublisher3(MqttPublisher pub, String buttonText)
     {      
         if(null != pub)
         {
             this.pub3 = pub;
+            this.relay3_jtb.setText(buttonText);
+            this.relay3_jtb.setVisible(true);
             this.relay3_jtb.setEnabled(true);
         }           
     }
     
-    public void SetPublisher4(MqttPublisher pub)
+    public void SetPublisher4(MqttPublisher pub, String buttonText)
     {      
         if(null != pub)
         {
             this.pub4 = pub;
+            this.relay4_jtb.setText(buttonText);
+            this.relay4_jtb.setVisible(true);
             this.relay4_jtb.setEnabled(true);
         }           
     }
     
-    public void SetPublisher5(MqttPublisher pub)
+    public void SetPublisher5(MqttPublisher pub, String buttonText)
     {      
         if(null != pub)
         {
             this.pub5 = pub;
+            this.relay5_jtb.setText(buttonText);
+            this.relay5_jtb.setVisible(true);
             this.relay5_jtb.setEnabled(true);
         }           
     }
     
-    public void SetPublisher6(MqttPublisher pub)
+    public void SetPublisher6(MqttPublisher pub, String buttonText)
     {      
         if(null != pub)
         {
             this.pub6 = pub;
+            this.relay6_jtb.setText(buttonText);
+            this.relay6_jtb.setVisible(true);
             this.relay6_jtb.setEnabled(true);
         }           
     }
     
-    public void SetPublisher7(MqttPublisher pub)
+    public void SetPublisher7(MqttPublisher pub, String buttonText)
     {      
         if(null != pub)
         {
             this.pub7 = pub;
+            this.relay7_jtb.setText(buttonText);
+            this.relay7_jtb.setVisible(true);
             this.relay7_jtb.setEnabled(true);
         }           
     }
     
-    public void SetPublisher8(MqttPublisher pub)
+    public void SetPublisher8(MqttPublisher pub, String buttonText)
     {      
         if(null != pub)
         {
             this.pub8 = pub;
+            this.relay8_jtb.setText(buttonText);
+            this.relay8_jtb.setVisible(true);
             this.relay8_jtb.setEnabled(true);
         }           
     }
