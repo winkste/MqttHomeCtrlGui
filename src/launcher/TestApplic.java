@@ -17,14 +17,14 @@ public class TestApplic {
   
   //public static gui.buttonPanel buttonPanel;
   public static gui.weatherPanel weatherPanel;
-  public static gui.homeTempPanel tempPanelLivingRoom;
+  //public static gui.homeTempPanel tempPanelLivingRoom;
   public static gui.valvePanel valvePanel;
   public static gui.roomControl graphLivingRoom;
   public static gui.roomControl roomHall;
   public static gui.startFrame myStartFrame;
   public static gui.homeTempPanel carportTempPanel;
-  public static gui.homeGraphPanel graphCarport;
-  public static gui.homeAreaPanel areaGraph;
+  //public static gui.homeGraphPanel graphCarport;
+  public static gui.homeAreaPanelEG areaGraph;
   public static gui.gardenControl gardenCtrl;
 
     /**
@@ -61,14 +61,14 @@ public class TestApplic {
                 //buttonPanel = new gui.buttonPanel();
                 gardenCtrl = new gui.gardenControl("Garten");
                 weatherPanel = new gui.weatherPanel(); 
-                tempPanelLivingRoom = new gui.homeTempPanel("Wohnzimmer");
+                //tempPanelLivingRoom = new gui.homeTempPanel("Wohnzimmer");
                 valvePanel = new gui.valvePanel();
                 graphLivingRoom = new gui.roomControl("Wohnzimmer");
                 roomHall = new gui.roomControl("Flur");
                 myStartFrame = new startFrame();
                 carportTempPanel = new gui.homeTempPanel("Carport");
-                graphCarport = new gui.homeGraphPanel("Carport");
-                areaGraph = new gui.homeAreaPanel();
+                //graphCarport = new gui.homeGraphPanel("Carport");
+                areaGraph = new gui.homeAreaPanelEG();
                
                 MyMqttClient client = MyMqttClient.getInstance();
                 client.setAddress("tcp://192.168.178.45:1883");
@@ -102,9 +102,9 @@ public class TestApplic {
                 client.setSubscriber(gardenCtrl.getMqttSubscriberRelay8("std/dev50/s/relay_eigth/status"));
                 gardenCtrl.SetPublisher8(client.createPublisher("std/dev50/r/relay_eight/switch"), "Garten 8");
 
-                client.setSubscriber(tempPanelLivingRoom.getMqttSubscriberTemperature("std/dev30/s/bme/temp"));
-                client.setSubscriber(tempPanelLivingRoom.getMqttSubscriberHumidity("std/dev30/s/bme/hum"));
-                tempPanelLivingRoom.SetHumidityThreshold(50.0);
+                //client.setSubscriber(tempPanelLivingRoom.getMqttSubscriberTemperature("std/dev30/s/bme/temp"));
+                //client.setSubscriber(tempPanelLivingRoom.getMqttSubscriberHumidity("std/dev30/s/bme/hum"));
+                //tempPanelLivingRoom.SetHumidityThreshold(50.0);
                 client.setSubscriber(graphLivingRoom.getMqttSubscriberTemperature("std/dev30/s/bme/temp"));
                 client.setSubscriber(graphLivingRoom.getMqttSubscriberHumidity("std/dev30/s/bme/hum"));
                 graphLivingRoom.SetPublisherForButton1(client.createPublisher("std/dev01/r/so_basic/switch"), "Lampe Fenster");
@@ -117,8 +117,8 @@ public class TestApplic {
                 client.setSubscriber(carportTempPanel.getMqttSubscriberTemperature("std/dev22/s/temp_hum/temp"));
                 client.setSubscriber(carportTempPanel.getMqttSubscriberHumidity("std/dev22/s/temp_hum/hum"));
                 carportTempPanel.SetHumidityThreshold(50.0);
-                client.setSubscriber(graphCarport.getMqttSubscriberTemperature("std/dev22/s/temp_hum/temp"));
-                client.setSubscriber(graphCarport.getMqttSubscriberHumidity("std/dev22/s/temp_hum/hum"));
+                //client.setSubscriber(graphCarport.getMqttSubscriberTemperature("std/dev99/s/temp_hum/temp"));
+                //client.setSubscriber(graphCarport.getMqttSubscriberHumidity("std/dev30/s/bme/temp"));
                 
                 client.setSubscriber(areaGraph.getMqttSubscriberCarportTemperature("std/dev22/s/temp_hum/temp"));
                 client.setSubscriber(areaGraph.getMqttSubscriberCarportHumidity("std/dev22/s/temp_hum/hum"));
@@ -132,11 +132,11 @@ public class TestApplic {
                 //myStartFrame.addPanel(buttonPanel);
                 myStartFrame.addPanel(gardenCtrl);
                 myStartFrame.addPanel(weatherPanel);
-                myStartFrame.addPanel(tempPanelLivingRoom);
+                //myStartFrame.addPanel(tempPanelLivingRoom);
                 myStartFrame.addPanel(graphLivingRoom);
                 myStartFrame.addPanel(roomHall);
                 myStartFrame.addPanel(carportTempPanel);
-                myStartFrame.addPanel(graphCarport);
+                //myStartFrame.addPanel(graphCarport);
                 
                 myStartFrame.addPanel(areaGraph);
                 //myStartFrame.addPanel(valvePanel);

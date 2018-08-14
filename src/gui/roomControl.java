@@ -44,6 +44,9 @@ public class roomControl extends javax.swing.JPanel {
         tempCallBack = panel.getTempSetCallback();
         humCallBack = panel.getHumSetCallback();     
         graphPanel_sjp.add(panel.getPanel());
+        jPanel1.setBackground(new java.awt.Color(48,131,251));
+        jPanel3.setBackground(new java.awt.Color(48,131,251));
+        graphPanel_sjp.setBackground(new java.awt.Color(48,131,251));
         SetButtonInvisible();
         
     }
@@ -56,6 +59,9 @@ public class roomControl extends javax.swing.JPanel {
         tempCallBack = panel.getTempSetCallback();
         humCallBack = panel.getHumSetCallback();   
         graphPanel_sjp.add(panel.getPanel());
+        jPanel1.setBackground(new java.awt.Color(48,131,251));
+        jPanel3.setBackground(new java.awt.Color(48,131,251));
+        graphPanel_sjp.setBackground(new java.awt.Color(48,131,251));
         SetButtonInvisible();
         
         genData = newGenData;
@@ -87,6 +93,7 @@ public class roomControl extends javax.swing.JPanel {
         button3_jtb = new javax.swing.JToggleButton();
         button4_jtb = new javax.swing.JToggleButton();
 
+        setBackground(new java.awt.Color(48, 131, 251));
         setPreferredSize(new java.awt.Dimension(788, 388));
 
         graphPanel_sjp.setBackground(new java.awt.Color(255, 255, 255));
@@ -135,19 +142,17 @@ public class roomControl extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(room_sjl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(room_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
                             .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(19, 19, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(temp_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
                                 .addContainerGap())
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(hum_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -242,7 +247,7 @@ public class roomControl extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(graphPanel_sjp, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+                .addComponent(graphPanel_sjp, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents

@@ -15,9 +15,11 @@ import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.axis.ValueAxis;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.DefaultXYItemRenderer;
+import org.jfree.chart.title.LegendTitle;
 import org.jfree.data.time.Millisecond;
 import org.jfree.data.time.TimeSeries;
 import org.jfree.data.time.TimeSeriesCollection;
+import org.jfree.ui.RectangleEdge;
 
 /**
  *
@@ -56,6 +58,10 @@ public class MySensorPanel {
         JFreeChart chart = ChartFactory.createTimeSeriesChart(
                 header_str, "Time", "°C", dataset1,
                 true, true, false);
+        chart.setTitle((String)null);
+        
+        LegendTitle legend = chart.getLegend();
+        legend.setPosition(RectangleEdge.RIGHT);
         
         /*this.addChart(chart);*/
 

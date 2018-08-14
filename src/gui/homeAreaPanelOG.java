@@ -12,12 +12,12 @@ import myMqtt.MqttSubscriber;
  *
  * @author winkste
  */
-public class homeAreaPanel extends javax.swing.JPanel {
+public class homeAreaPanelOG extends javax.swing.JPanel {
 
     /**
      * Creates new form homeTempPanel
      */
-    public homeAreaPanel() {
+    public homeAreaPanelOG() {
         initComponents();
     }
 
@@ -56,68 +56,71 @@ public class homeAreaPanel extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Carport");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 80, 20));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 250, 90, 20));
 
         carport_sjl.setBackground(new java.awt.Color(255, 255, 255));
         carport_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         carport_sjl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         carport_sjl.setText("(+12°C/10%)");
-        jPanel1.add(carport_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 130, -1));
+        jPanel1.add(carport_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 270, 130, -1));
 
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Esszimmer");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 90, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 90, -1));
 
         kitchen_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         kitchen_sjl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         kitchen_sjl.setText("(+12°C/40%)");
-        jPanel1.add(kitchen_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, 160, -1));
+        jPanel1.add(kitchen_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 160, -1));
 
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Wohnzimmer");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, -1, -1));
 
         livRoom_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         livRoom_sjl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         livRoom_sjl.setText("(+12°C/40%)");
-        jPanel1.add(livRoom_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 120, 140, -1));
+        jPanel1.add(livRoom_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 140, -1));
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Flur");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, -1, -1));
 
         hall_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         hall_sjl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         hall_sjl.setText("(+12°C/40%)");
-        jPanel1.add(hall_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, -1, -1));
+        jPanel1.add(hall_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, -1, -1));
 
+        jLabel6.setBackground(new java.awt.Color(51, 51, 255));
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Gäste WC");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 70, -1, -1));
 
+        guestWc_sjl.setBackground(new java.awt.Color(51, 51, 255));
         guestWc_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        guestWc_sjl.setForeground(new java.awt.Color(255, 255, 255));
         guestWc_sjl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         guestWc_sjl.setText("(+12°C/40%)");
-        jPanel1.add(guestWc_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, -1, -1));
+        jPanel1.add(guestWc_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 90, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Außen");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 290, -1, -1));
 
         outside_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         outside_sjl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         outside_sjl.setText("(-05°C/40%)");
         outside_sjl.setToolTipText("");
-        jPanel1.add(outside_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
+        jPanel1.add(outside_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 310, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/home/eg.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-140, 0, 920, 380));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/home/erstesog.jpeg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 380));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
