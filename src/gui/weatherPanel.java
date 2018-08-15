@@ -65,9 +65,9 @@ public class weatherPanel extends javax.swing.JPanel {
         pos_sjl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         pos_sjl.setText("Celle");
 
-        time_sjl.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        time_sjl.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
         time_sjl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        time_sjl.setText("16:05:33");
+        time_sjl.setText("16 : 05");
 
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -122,10 +122,10 @@ public class weatherPanel extends javax.swing.JPanel {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(pos_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(7, 7, 7)
-                                .addComponent(time_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(21, 21, 21)
-                                .addComponent(date_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(time_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(date_sjl)))
                         .addGap(31, 31, 31)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(firstDayPanel_smp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -236,17 +236,17 @@ public class weatherPanel extends javax.swing.JPanel {
             Date d = new Date();
             
             SimpleDateFormat sdfmt = new SimpleDateFormat();
-            sdfmt.applyPattern( "EEEE', 'dd. MMMM yyyy hh:mm" );
-            System.out.println(sdfmt.format(d));
+            //sdfmt.applyPattern( "EEEE', 'dd. MMMM yyyy HH:mm" );
+            //System.out.println(sdfmt.format(d));
             
-            sdfmt = new SimpleDateFormat();
-            sdfmt.applyPattern( "dd', 'MMM yyyy" );
-            System.out.println(sdfmt.format(d));
+            //sdfmt = new SimpleDateFormat();
+            sdfmt.applyPattern( "dd', 'MMM. yyyy" );
+            //System.out.println(sdfmt.format(d));
             date_sjl.setText(sdfmt.format(d));
             
             sdfmt = new SimpleDateFormat();
-            sdfmt.applyPattern( "hh : mm" );
-            System.out.println(sdfmt.format(d));
+            sdfmt.applyPattern( "HH:mm" );
+            //System.out.println(sdfmt.format(d));
             time_sjl.setText(sdfmt.format(d));
         }       
     }

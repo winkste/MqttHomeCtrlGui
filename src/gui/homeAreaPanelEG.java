@@ -30,6 +30,7 @@ public class homeAreaPanelEG extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         carport_sjl = new javax.swing.JLabel();
@@ -43,94 +44,175 @@ public class homeAreaPanelEG extends javax.swing.JPanel {
         guestWc_sjl = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         outside_sjl = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/home/erdgeschoss.jpeg"))); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setMaximumSize(new java.awt.Dimension(595, 333));
         jPanel1.setMinimumSize(new java.awt.Dimension(595, 333));
         jPanel1.setName(""); // NOI18N
+        jPanel1.setOpaque(false);
         jPanel1.setPreferredSize(new java.awt.Dimension(595, 333));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Carport");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 30, 90, 20));
 
         carport_sjl.setBackground(new java.awt.Color(255, 255, 255));
         carport_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         carport_sjl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         carport_sjl.setText("(+12°C/10%)");
-        jPanel1.add(carport_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 50, 130, -1));
 
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Esszimmer");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 90, -1));
 
         kitchen_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         kitchen_sjl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         kitchen_sjl.setText("(+12°C/40%)");
-        jPanel1.add(kitchen_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 160, -1));
 
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Wohnzimmer");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, -1, -1));
 
         livRoom_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         livRoom_sjl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         livRoom_sjl.setText("(+12°C/40%)");
-        jPanel1.add(livRoom_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 140, -1));
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Flur");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, -1, -1));
 
         hall_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         hall_sjl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         hall_sjl.setText("(+12°C/40%)");
-        jPanel1.add(hall_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, -1, -1));
 
         jLabel6.setBackground(new java.awt.Color(51, 51, 255));
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Gäste WC");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, -1, -1));
 
         guestWc_sjl.setBackground(new java.awt.Color(51, 51, 255));
         guestWc_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         guestWc_sjl.setForeground(new java.awt.Color(255, 255, 255));
         guestWc_sjl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         guestWc_sjl.setText("(+12°C/40%)");
-        jPanel1.add(guestWc_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Außen");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 290, -1, -1));
 
         outside_sjl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         outside_sjl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         outside_sjl.setText("(-05°C/40%)");
         outside_sjl.setToolTipText("");
-        jPanel1.add(outside_sjl, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 310, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/home/erdgeschoss.jpeg"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 380));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(650, 650, 650)
+                        .addComponent(carport_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(280, 280, 280)
+                        .addComponent(kitchen_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(340, 340, 340)
+                        .addComponent(jLabel5))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(340, 340, 340)
+                        .addComponent(hall_sjl))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(490, 490, 490)
+                        .addComponent(jLabel6))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(650, 650, 650)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(270, 270, 270)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(660, 660, 660)
+                        .addComponent(jLabel7))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(660, 660, 660)
+                        .addComponent(outside_sjl))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(490, 490, 490)
+                        .addComponent(guestWc_sjl))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(livRoom_sjl, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(10, 10, 10))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(carport_sjl)
+                        .addGap(84, 84, 84)
+                        .addComponent(kitchen_sjl)
+                        .addGap(84, 84, 84)
+                        .addComponent(jLabel5)
+                        .addGap(4, 4, 4)
+                        .addComponent(hall_sjl)
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabel6))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(290, 290, 290)
+                        .addComponent(jLabel7))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(310, 310, 310)
+                        .addComponent(outside_sjl))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(310, 310, 310)
+                        .addComponent(guestWc_sjl))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(270, 270, 270)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(290, 290, 290)
+                        .addComponent(livRoom_sjl)))
+                .addGap(54, 54, 54))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(4, 4, 4)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGap(4, 4, 4)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
     }// </editor-fold>//GEN-END:initComponents
 
